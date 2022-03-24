@@ -17,6 +17,7 @@ public class Profesor extends Usuarios {
 	public int getCantFigurasCreadas() {
 		return cantFigurasCreadas;
 	}
+	
 
 	public void setCantFigurasCreadas(int cantFigurasCreadas) {
 		this.cantFigurasCreadas = cantFigurasCreadas;
