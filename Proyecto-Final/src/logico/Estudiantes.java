@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Estudiantes extends Usuarios {
 	
 	protected ArrayList<Profesor> misProfesores;
-	protected ArrayList<Prisma> misPrisma;
+	protected ArrayList<Prisma> misPrismas;
 	
 
 	public Estudiantes(String matricula, String nombre, int fechaNacimiento, ArrayList<Profesor> misProfesores, ArrayList<Prisma> misPrisma) {
 		super(matricula, nombre, fechaNacimiento);
 		
 		this.misProfesores = new ArrayList<>();
-		this.misPrisma = new ArrayList<>();
+		this.misPrismas = new ArrayList<>();
 		
 	}
 
@@ -28,13 +28,13 @@ public class Estudiantes extends Usuarios {
 	}
 
 
-	public ArrayList<Prisma> getMisPrisma() {
-		return misPrisma;
+	public ArrayList<Prisma> getMisPrismas() {
+		return misPrismas;
 	}
 
 
-	public void setMisPrisma(ArrayList<Prisma> misPrisma) {
-		this.misPrisma = misPrisma;
+	public void setMisPrisma(ArrayList<Prisma> misPrismas) {
+		this.misPrismas = misPrismas;
 	}
 	
 	
