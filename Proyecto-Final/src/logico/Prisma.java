@@ -21,5 +21,5 @@ public abstract class Prisma {
 	
 	public abstract float Volumen();
 	public abstract float areaLaterales();
-	public abstract void areaTotales();
+	public abstract float areaTotales();
 }

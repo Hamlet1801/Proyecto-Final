@@ -29,19 +29,22 @@ public class Cuadrado extends Prisma {
 
 	@Override
 	public float Volumen() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return (verticeY * verticeX * Altura);
 	}
 
 	@Override
 	public float areaLaterales() {
-		// TODO Auto-generated method stub
-		return 0;
+		float arista = (float) Math.pow(verticeX, 2);
+		float areaLateral = (4 * arista);
+		return areaLateral;
 	}
 
 	@Override
-	public void areaTotales() {
-		// TODO Auto-generated method stub
+	public float areaTotales() {
+		float arista = (float) Math.pow(verticeX, 2);
+		float total= 6 * arista ;
+		return total;
 
 	}
 

@@ -42,19 +42,24 @@ public class Triangulo extends Prisma {
 
 	@Override
 	public float Volumen() {
-		// TODO Auto-generated method stub
-		return 0;
+		float areaBase = (verticeBX * verticeBY ) / 2;
+		float volumen = areaBase * Altura;
+		return volumen;
 	}
 
 	@Override
 	public float areaLaterales() {
-		// TODO Auto-generated method stub
-		return 0;
+		float areaLateral = verticeBY * verticeBX * Altura;
+		
+		return areaLateral;
 	}
 
 	@Override
-	public void areaTotales() {
-		// TODO Auto-generated method stub
+	public float areaTotales() {
+		float areaBase = (verticeBX * verticeBY ) / 2;
+		float areaTotal =  areaLaterales() + (2*areaBase);
+		return areaTotal;
+		
 
 	}
 

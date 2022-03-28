@@ -39,19 +39,24 @@ public class Rectangulo extends Prisma {
 
 	@Override
 	public float Volumen() {
-		// TODO Auto-generated method stub
-		return 0;
+		float areaBase = verticeX * verticeY;
+		float vol = areaBase * Altura;
+		return vol;
 	}
 
 	@Override
 	public float areaLaterales() {
-		// TODO Auto-generated method stub
-		return 0;
+	  float perimetroBase = verticeX + verticeX +verticeY + verticeY;
+	  float areaLateral = perimetroBase * Altura;
+		return areaLateral;
 	}
 
 	@Override
-	public void areaTotales() {
-		// TODO Auto-generated method stub
+	public float areaTotales() {
+		float areaBase = verticeX * verticeY;
+		float areaTotal = areaLaterales() + 2 * (areaBase);
+		return areaTotal;
+		
 
 	}
 

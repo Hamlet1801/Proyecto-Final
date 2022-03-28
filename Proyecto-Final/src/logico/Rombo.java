@@ -53,8 +53,9 @@ public class Rombo extends Prisma {
 
 	@Override
 	public float Volumen() {
-		// TODO Auto-generated method stub
-		return 0;
+		float areaBase = (verticeX * verticeY) / 2;
+		float volumen = areaBase * Altura;
+		return volumen;
 	}
 
 	@Override
@@ -64,7 +65,8 @@ public class Rombo extends Prisma {
 	}
 
 	@Override
-	public void areaTotales() {
+	public float areaTotales() {
+		return 0;
 		// TODO Auto-generated method stub
 
 	}

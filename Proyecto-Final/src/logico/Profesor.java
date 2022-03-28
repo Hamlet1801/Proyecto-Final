@@ -10,7 +10,7 @@ public class Profesor extends Usuarios {
 	public Profesor(String matricula, String nombre, int fechaNacimiento, int cantFigurascreadas,ArrayList<Prisma> misPrisma) {
 		super(matricula, nombre, fechaNacimiento);
 	
-		this.cantFigurasCreadas =cantFigurasCreadas;
+		this.cantFigurasCreadas = cantFigurasCreadas;
 		this.misPrisma = new ArrayList<>();
 	}
 

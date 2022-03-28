@@ -59,8 +59,9 @@ public class Trapecio extends Prisma {
 
 	@Override
 	public float Volumen() {
-		// TODO Auto-generated method stub
-		return 0;
+		float areaBase = (verticeTX + verticeTY / 2) * AlturaT;
+		float volumen = areaBase * AlturaT;
+		return volumen;
 	}
 
 	@Override
@@ -70,7 +71,8 @@ public class Trapecio extends Prisma {
 	}
 
 	@Override
-	public void areaTotales() {
+	public float areaTotales() {
+		return 0;
 		// TODO Auto-generated method stub
 
 	}
