@@ -11,9 +11,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/lib/ext/j3dcore.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/lib/ext/j3dutils.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/lib/ext/vecmath.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/1.5.1/lib/ext/j3dcore.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/1.5.1/lib/ext/j3dutils.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/1.5.1/lib/ext/vecmath.jar"/>
