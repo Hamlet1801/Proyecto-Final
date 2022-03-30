@@ -27,8 +27,6 @@ public class MenuPrincipal extends JFrame {
 
 	private JPanel contentPane;
 	private Dimension dim;
-	private JButton btnIngresar;
-	private JButton btnRegistrar;
 	
 
 	/**
@@ -60,6 +58,31 @@ public class MenuPrincipal extends JFrame {
 		dim = getToolkit().getScreenSize();
 		setSize(dim.width, dim.height-50);
 		setLocationRelativeTo(null);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(new Color(100, 149, 237));
+		setJMenuBar(menuBar);
+		
+		JMenu mnUsuario = new JMenu("Usuario");
+		menuBar.add(mnUsuario);
+		
+		JMenuItem mntmRegistrar = new JMenuItem("Registrar");
+		mnUsuario.add(mntmRegistrar);
+		
+		JMenu mnFigura = new JMenu("Figuras");
+		menuBar.add(mnFigura);
+		
+		JMenuItem mntmCrearFigura = new JMenuItem("Crear Figura");
+		mnFigura.add(mntmCrearFigura);
+		
+		JMenu mnListaDeFigura = new JMenu("Lista de Figuras");
+		mnFigura.add(mnListaDeFigura);
+		
+		JMenuItem mntmListaDelProfesor = new JMenuItem("Lista de Figuras del Profesor");
+		mnListaDeFigura.add(mntmListaDelProfesor);
+		
+		JMenuItem mntmListaDelEstudiantes = new JMenuItem("Lista de Figuras del Estudiantes");
+		mnListaDeFigura.add(mntmListaDelEstudiantes);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 0, 128));
 		contentPane.setForeground(new Color(0, 0, 0));
@@ -78,28 +101,8 @@ public class MenuPrincipal extends JFrame {
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitulo.setForeground(new Color(255, 255, 255));
 		lblTitulo.setFont(new Font("Ravie", Font.PLAIN, 28));
-		lblTitulo.setBounds(64, 141, 545, 107);
+		lblTitulo.setBounds(59, 170, 545, 107);
 		panel.add(lblTitulo);
-		
-		btnIngresar = new JButton("INGRESAR");
-		btnIngresar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				IngresarU ingU = new IngresarU();
-				ingU.setModal(true);
-				ingU.setVisible(true);
-				
-			}
-		});
-		btnIngresar.setBackground(new Color(143, 188, 143));
-		btnIngresar.setFont(new Font("Stencil", Font.ITALIC, 18));
-		btnIngresar.setBounds(135, 247, 167, 27);
-		panel.add(btnIngresar);
-		
-		btnRegistrar = new JButton("REGISTRAR");
-		btnRegistrar.setBackground(new Color(218, 165, 32));
-		btnRegistrar.setFont(new Font("Stencil", Font.ITALIC, 18));
-		btnRegistrar.setBounds(367, 247, 167, 27);
-		panel.add(btnRegistrar);
 		
 		JLabel lblFondo1 = new JLabel("");
 		lblFondo1.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/imagenes/Fp.png")));
