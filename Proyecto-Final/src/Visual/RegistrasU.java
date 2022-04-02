@@ -17,15 +17,18 @@ import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
+import javax.swing.SpinnerDateModel;
+import java.util.Date;
+import java.util.Calendar;
 
 public class RegistrasU extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JButton okButton;
 	private JTextField txtGrupo;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField txtContrasna;
+	private JTextField txtMatricula;
+	private JTextField txtNombre;
+	private JTextField txtContrasena;
 
 	/**
 	 * Launch the application.
@@ -65,7 +68,7 @@ public class RegistrasU extends JDialog {
 			rdbtnProfesor.setFont(new Font("Tahoma", Font.BOLD, 13));
 			rdbtnProfesor.setBackground(new Color(100, 149, 237));
 			rdbtnProfesor.setSelected(true);
-			rdbtnProfesor.setBounds(115, 17, 99, 23);
+			rdbtnProfesor.setBounds(115, 17, 107, 23);
 			panel.add(rdbtnProfesor);
 			
 			JRadioButton rdbtnEstudiante = new JRadioButton("ESTUDIANTE");
@@ -117,10 +120,10 @@ public class RegistrasU extends JDialog {
 				panel.add(lblMatricula);
 			}
 			{
-				textField = new JTextField();
-				textField.setBounds(129, 88, 378, 23);
-				panel.add(textField);
-				textField.setColumns(10);
+				txtMatricula = new JTextField();
+				txtMatricula.setBounds(129, 88, 378, 23);
+				panel.add(txtMatricula);
+				txtMatricula.setColumns(10);
 			}
 			{
 				JLabel lblNombre = new JLabel("NOMBRE:");
@@ -130,10 +133,10 @@ public class RegistrasU extends JDialog {
 				panel.add(lblNombre);
 			}
 			{
-				textField_1 = new JTextField();
-				textField_1.setBounds(129, 145, 378, 23);
-				panel.add(textField_1);
-				textField_1.setColumns(10);
+				txtNombre = new JTextField();
+				txtNombre.setBounds(129, 145, 378, 23);
+				panel.add(txtNombre);
+				txtNombre.setColumns(10);
 			}
 			{
 				JLabel lblFechaDN = new JLabel("FECHA DE NACIMIENTO");
@@ -143,40 +146,10 @@ public class RegistrasU extends JDialog {
 				panel.add(lblFechaDN);
 			}
 			{
-				JSpinner spnDia = new JSpinner();
-				spnDia.setBounds(98, 231, 69, 20);
-				panel.add(spnDia);
-			}
-			{
-				JSpinner spnMes = new JSpinner();
-				spnMes.setBounds(98, 259, 69, 20);
-				panel.add(spnMes);
-			}
-			{
-				JSpinner spnano = new JSpinner();
-				spnano.setBounds(98, 293, 69, 20);
-				panel.add(spnano);
-			}
-			{
-				JLabel lblDia = new JLabel("DIA");
-				lblDia.setForeground(new Color(255, 255, 255));
-				lblDia.setFont(new Font("Tahoma", Font.BOLD, 13));
-				lblDia.setBounds(29, 234, 46, 14);
-				panel.add(lblDia);
-			}
-			{
-				JLabel lblMes = new JLabel("MES");
-				lblMes.setForeground(new Color(255, 255, 255));
-				lblMes.setFont(new Font("Tahoma", Font.BOLD, 13));
-				lblMes.setBounds(29, 262, 46, 14);
-				panel.add(lblMes);
-			}
-			{
-				JLabel lblAno = new JLabel("A\u00D1O");
-				lblAno.setForeground(new Color(255, 255, 255));
-				lblAno.setFont(new Font("Tahoma", Font.BOLD, 13));
-				lblAno.setBounds(29, 296, 46, 14);
-				panel.add(lblAno);
+				JSpinner spnFechaDeNacimiento = new JSpinner();
+				spnFechaDeNacimiento.setModel(new SpinnerDateModel(new Date(1648612800000L), null, null, Calendar.DAY_OF_YEAR));
+				spnFechaDeNacimiento.setBounds(29, 231, 150, 23);
+				panel.add(spnFechaDeNacimiento);
 			}
 			{
 				JLabel lblContraseña = new JLabel("CONTRASE\u00D1A");
@@ -186,10 +159,10 @@ public class RegistrasU extends JDialog {
 				panel.add(lblContraseña);
 			}
 			{
-				txtContrasna = new JTextField();
-				txtContrasna.setBounds(236, 231, 271, 23);
-				panel.add(txtContrasna);
-				txtContrasna.setColumns(10);
+				txtContrasena = new JTextField();
+				txtContrasena.setBounds(236, 231, 271, 23);
+				panel.add(txtContrasena);
+				txtContrasena.setColumns(10);
 			}
 		}
 		{

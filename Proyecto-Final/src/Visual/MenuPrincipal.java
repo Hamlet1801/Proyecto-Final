@@ -83,6 +83,12 @@ public class MenuPrincipal extends JFrame {
 		
 		JMenuItem mntmListaDelEstudiantes = new JMenuItem("Lista de Figuras del Estudiantes");
 		mnListaDeFigura.add(mntmListaDelEstudiantes);
+		
+		JMenu mnProfesor = new JMenu("Profesor");
+		menuBar.add(mnProfesor);
+		
+		JMenuItem mntmListaDeGrupos = new JMenuItem("Lista de Grupos ");
+		mnProfesor.add(mntmListaDeGrupos);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 0, 128));
 		contentPane.setForeground(new Color(0, 0, 0));
