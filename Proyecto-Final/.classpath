@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
@@ -13,7 +13,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/lib/ext/j3dcore.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/lib/ext/j3dutils.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/lib/ext/vecmath.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/Java3D/lib/ext/vecmath.jar"/>s
 	<classpathentry kind="output" path="bin"/>
 </classpath>
-
