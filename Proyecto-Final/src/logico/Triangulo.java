@@ -4,13 +4,13 @@ public class Triangulo extends Prisma {
 	
 	private float verticeBX;
 	private float verticeBY;
-	private float verticeAltura;
+	
 
-	public Triangulo(float altura, float verticeBX, float verticeBY, float verticeAltura) {
+	public Triangulo(float altura, float verticeBX, float verticeBY) {
 		super(altura);
 		this.verticeBX = verticeBX;
 		this.verticeBY = verticeBY;
-		this.verticeAltura = verticeAltura;
+		
 	}
 	
 
@@ -30,13 +30,7 @@ public class Triangulo extends Prisma {
 		this.verticeBY = verticeBY;
 	}
 
-	public float getVerticeAltura() {
-		return verticeAltura;
-	}
 
-	public void setVerticeAltura(float verticeAltura) {
-		this.verticeAltura = verticeAltura;
-	}
 
 	
 

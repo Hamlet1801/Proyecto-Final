@@ -4,13 +4,13 @@ public class Rectangulo extends Prisma {
 	
 	private float verticeX;
 	private float verticeY;
-	private float verticeZ;
 
-	public Rectangulo(float altura,float verticeX,float verticeY,float verticeZ) {
+
+	public Rectangulo(float altura,float verticeX,float verticeY) {
 		super(altura);
 		this.verticeX = verticeX;
 		this.verticeY = verticeY;
-		this.verticeZ = verticeZ;
+		
 	}
 
 	public float getVerticeX() {
@@ -29,13 +29,7 @@ public class Rectangulo extends Prisma {
 		this.verticeY = verticeY;
 	}
 
-	public float getVerticeZ() {
-		return verticeZ;
-	}
-
-	public void setVerticeZ(float verticeZ) {
-		this.verticeZ = verticeZ;
-	}
+	
 
 	@Override
 	public float Volumen() {
