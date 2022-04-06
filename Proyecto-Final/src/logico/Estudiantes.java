@@ -2,44 +2,35 @@ package logico;
 
 import java.util.ArrayList;
 
+
+
 public class Estudiantes extends Usuarios {
 	
-	protected ArrayList<Profesor> misProfesores;
-	protected ArrayList<Prisma> misPrismas;
+	private ArrayList<Profesor> misPorfesores;
+	private ArrayList<Prisma> prismasEstudiante;
 	
-
-	public Estudiantes(String matricula, String nombre, int fechaNacimiento, ArrayList<Profesor> misProfesores, ArrayList<Prisma> misPrisma) {
-		super(matricula, nombre, fechaNacimiento);
-		
-		this.misProfesores = new ArrayList<>();
-		this.misPrismas = new ArrayList<>();
-		
+	public Estudiantes(String matricula, String nombre, String contraseña, int diaNacimiento, int mesNacimiento,
+			int añoNacimiento, ArrayList<Profesor> misPorfesores, ArrayList<Prisma> prismasEstudiante) {
+		super(matricula, nombre, contraseña, diaNacimiento, mesNacimiento, añoNacimiento);
+		this.misPorfesores = misPorfesores;
+		this.prismasEstudiante = prismasEstudiante;
 	}
 
-
 	
-	public ArrayList<Profesor> getMisProfesores() {
-		return misProfesores;
+	public ArrayList<Profesor> getMisPorfesores() {
+		return misPorfesores;
 	}
 
-
-	public void setMisProfesores(ArrayList<Profesor> misProfesores) {
-		this.misProfesores = misProfesores;
+	public void setMisPorfesores(ArrayList<Profesor> misPorfesores) {
+		this.misPorfesores = misPorfesores;
 	}
 
-
-	public ArrayList<Prisma> getMisPrismas() {
-		return misPrismas;
+	public ArrayList<Prisma> getPrismasEstudiante() {
+		return prismasEstudiante;
 	}
 
-
-	public void setMisPrisma(ArrayList<Prisma> misPrismas) {
-		this.misPrismas = misPrismas;
+	public void setPrismasEstudiante(ArrayList<Prisma> prismasEstudiante) {
+		this.prismasEstudiante = prismasEstudiante;
 	}
-	
-	
-	
-	
-	
 
 }

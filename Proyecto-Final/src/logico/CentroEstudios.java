@@ -1,41 +1,59 @@
 package logico;
 
+
 import java.util.ArrayList;
 
 public class CentroEstudios {
+
+	private ArrayList<Prisma> misPrismas;
+	private ArrayList<Usuarios> misUsuarios;
+	private ArrayList<Grupo> misGrupos;
+	public static CentroEstudios centroestudios= null;
 	
-	protected ArrayList<Profesor> misProfesores;
-	protected ArrayList <Estudiantes> misEstudiantes;
-	protected ArrayList<Grupo> misGrupos;
-	protected ArrayList<Prisma> misPrisma;
-	
-	
-	public CentroEstudios(ArrayList<Profesor> misProfesores, ArrayList<Estudiantes> misEstudiantes,
-			ArrayList<Grupo> misGrupos, ArrayList<Prisma> misPrisma) {
+	public CentroEstudios() {
 		super();
-		this.misProfesores = new ArrayList<>();
-		this.misEstudiantes = new ArrayList<>();
-		this.misGrupos = new ArrayList<>();
-		this.misPrisma = new ArrayList<>();
+		this.misPrismas = new ArrayList<Prisma>();
+		this.misUsuarios = new ArrayList<Usuarios>();
+		this.misGrupos = new ArrayList<Grupo>();
 	}
-
-
 	
-	public ArrayList<Profesor> getMisProfesores() {
-		return misProfesores;
+	
+	public static CentroEstudios getInstance1() {
+		if(centroestudios== null) {
+			centroestudios= new CentroEstudios();
+		}
+		return centroestudios;
 	}
 
-	public void setMisProfesores(ArrayList<Profesor> misProfesores) {
-		this.misProfesores = misProfesores;
+	public ArrayList<Prisma> getMisPrismas() {
+		return misPrismas;
 	}
 
-	public ArrayList<Estudiantes> getMisEstudiantes() {
-		return misEstudiantes;
+	public void setMisPrismas(ArrayList<Prisma> misPrismas) {
+		this.misPrismas = misPrismas;
 	}
 
-	public void setMisEstudiantes(ArrayList<Estudiantes> misEstudiantes) {
-		this.misEstudiantes = misEstudiantes;
+	public ArrayList<Usuarios> getMisUsuarios() {
+		return misUsuarios;
 	}
+
+	public void setMisUsuarios(ArrayList<Usuarios> misUsuarios) {
+		this.misUsuarios = misUsuarios;
+	}
+
+	public ArrayList<Grupo> getMisGrupos1() {
+		return misGrupos;
+	}
+
+	public void setMisGrupos1(ArrayList<Grupo> misGrupos) {
+		this.misGrupos = misGrupos;
+	}
+	
+	public void insertarUser(Usuarios usuario) {
+		misUsuarios.add(usuario);
+	}
+
+
 
 	public ArrayList<Grupo> getMisGrupos() {
 		return misGrupos;
@@ -47,13 +65,17 @@ public class CentroEstudios {
 
 
 	public ArrayList<Prisma> getMisPrisma() {
-		return misPrisma;
+		return misPrismas;
 	}
 
 
 	public void setMisPrisma(ArrayList<Prisma> misPrisma) {
-		this.misPrisma = misPrisma;
+		this.misPrismas = misPrisma;
 	}
+
+
+
+	
 	
 	
 	

@@ -1,25 +1,30 @@
 package logico;
 
-public class Usuarios {
+public abstract class Usuarios {
 	
 	protected String matricula;
 	protected String nombre;
-	protected int fechaNacimiento;
+	protected String contraseña;
+	protected int diaNacimiento;
+	protected int mesNacimiento;
+	protected int añoNacimiento;
 	
-	
-	
-	public Usuarios(String matricula, String nombre, int fechaNacimiento) {
+	public Usuarios(String matricula, String nombre, String contraseña, int diaNacimiento, int mesNacimiento,
+			int añoNacimiento) {
 		super();
 		this.matricula = matricula;
 		this.nombre = nombre;
-		this.fechaNacimiento = fechaNacimiento;
+		this.contraseña = contraseña;
+		this.diaNacimiento = diaNacimiento;
+		this.mesNacimiento = mesNacimiento;
+		this.añoNacimiento = añoNacimiento;
 	}
+	
 
 	public String getMatricula() {
 		return matricula;
 	}
 
-	
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
@@ -32,16 +37,41 @@ public class Usuarios {
 		this.nombre = nombre;
 	}
 
-	public int getFechaNacimiento() {
-		return fechaNacimiento;
+	public String getContraseña() {
+		return contraseña;
 	}
 
-	public void setFechaNacimiento(int fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
 	}
-	
-	
-	
+
+	public int getDiaNacimiento() {
+		return diaNacimiento;
+	}
+
+	public void setDiaNacimiento(int diaNacimiento) {
+		this.diaNacimiento = diaNacimiento;
+	}
+
+	public int getMesNacimiento() {
+		return mesNacimiento;
+	}
+
+	public void setMesNacimiento(int mesNacimiento) {
+		this.mesNacimiento = mesNacimiento;
+	}
+
+	public int getAñoNacimiento() {
+		return añoNacimiento;
+	}
+
+	public void setAñoNacimiento(int añoNacimiento) {
+		this.añoNacimiento = añoNacimiento;
+	}
 	
 
 }
+	
+	
+
+
