@@ -18,6 +18,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Toolkit;
 
 public class ListEstudiantes extends JDialog {
 
@@ -45,15 +47,18 @@ public class ListEstudiantes extends JDialog {
 	 * Create the dialog.
 	 */
 	public ListEstudiantes() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ListEstudiantes.class.getResource("/imagenes/icono.png")));
 		setTitle("Listado de Estudiantes");
 		setBounds(100, 100, 502, 425);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(25, 25, 112));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(new BorderLayout(0, 0));
 		{
 			JScrollPane scrollPane = new JScrollPane();
+			scrollPane.setViewportBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			contentPanel.add(scrollPane, BorderLayout.CENTER);
 			{
 				//CREACION DE LOS ENCABEZADOS******************
@@ -67,11 +72,13 @@ public class ListEstudiantes extends JDialog {
 		}
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(new Color(0, 0, 0));
 			buttonPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton cancelButton = new JButton("Salir");
+				cancelButton.setBackground(new Color(255, 140, 0));
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						dispose();

@@ -27,6 +27,12 @@ import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.UIManager;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 public class RegUsuario extends JDialog {
 
@@ -58,58 +64,72 @@ public class RegUsuario extends JDialog {
 	 * Create the dialog.
 	 */
 	public RegUsuario() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(RegUsuario.class.getResource("/imagenes/icono.png")));
+		getContentPane().setBackground(new Color(25, 25, 112));
 		setTitle("Registro de Usuarios");
-		setBounds(100, 100, 377, 369);
+		setBounds(100, 100, 580, 494);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(25, 25, 112));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(new BorderLayout(0, 0));
 		{
 			JPanel panel = new JPanel();
-			panel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			panel.setBackground(new Color(0, 0, 0));
+			panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 			contentPanel.add(panel, BorderLayout.CENTER);
 			panel.setLayout(null);
 			{
 				JLabel lblNewLabel = new JLabel("Matricula:");
-				lblNewLabel.setBounds(10, 11, 80, 14);
+				lblNewLabel.setForeground(new Color(255, 255, 255));
+				lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
+				lblNewLabel.setBounds(52, 86, 80, 23);
 				panel.add(lblNewLabel);
 			}
 			{
 				txtMatricula = new JTextField();
-				txtMatricula.setBounds(100, 8, 241, 20);
+				txtMatricula.setBounds(166, 88, 320, 23);
 				panel.add(txtMatricula);
 				txtMatricula.setColumns(10);
 			}
 			{
-				JLabel lblNewLabel_1 = new JLabel("Nombre:");
-				lblNewLabel_1.setBounds(10, 57, 80, 14);
-				panel.add(lblNewLabel_1);
+				JLabel lblNombre = new JLabel("Nombre:");
+				lblNombre.setForeground(new Color(255, 255, 255));
+				lblNombre.setFont(new Font("Tahoma", Font.BOLD, 15));
+				lblNombre.setBounds(52, 133, 80, 23);
+				panel.add(lblNombre);
 			}
 			{
 				txtNombre = new JTextField();
-				txtNombre.setBounds(100, 54, 241, 20);
+				txtNombre.setBounds(166, 135, 320, 23);
 				panel.add(txtNombre);
 				txtNombre.setColumns(10);
 			}
 			{
-				JLabel lblNewLabel_2 = new JLabel("Fecha de nacimineto:");
-				lblNewLabel_2.setBounds(10, 108, 122, 14);
-				panel.add(lblNewLabel_2);
+				JLabel lblFechaDeNacimiento = new JLabel("Fecha de nacimineto:");
+				lblFechaDeNacimiento.setForeground(new Color(255, 255, 255));
+				lblFechaDeNacimiento.setFont(new Font("Tahoma", Font.BOLD, 13));
+				lblFechaDeNacimiento.setBounds(52, 192, 142, 23);
+				panel.add(lblFechaDeNacimiento);
 			}
 			{
-				JLabel lblNewLabel_3 = new JLabel("Contrase\u00F1a:");
-				lblNewLabel_3.setBounds(10, 160, 80, 14);
-				panel.add(lblNewLabel_3);
+				JLabel lblContraseña = new JLabel("Contrase\u00F1a:");
+				lblContraseña.setForeground(new Color(255, 255, 255));
+				lblContraseña.setFont(new Font("Tahoma", Font.BOLD, 15));
+				lblContraseña.setBounds(52, 272, 104, 23);
+				panel.add(lblContraseña);
 			}
 			{
 				txtContraseña = new JTextField();
-				txtContraseña.setBounds(100, 157, 241, 20);
+				txtContraseña.setBounds(166, 274, 320, 23);
 				panel.add(txtContraseña);
 				txtContraseña.setColumns(10);
 			}
 			{
 				rbdtEstudiante = new JRadioButton("Estudiante");
+				rbdtEstudiante.setBackground(new Color(176, 196, 222));
+				rbdtEstudiante.setForeground(new Color(0, 0, 0));
 				rbdtEstudiante.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						rbdtEstudiante.setSelected(true);
@@ -117,45 +137,54 @@ public class RegUsuario extends JDialog {
 					}
 				});
 				rbdtEstudiante.setSelected(true);
-				rbdtEstudiante.setBounds(64, 215, 109, 23);
+				rbdtEstudiante.setBounds(141, 339, 109, 23);
 				panel.add(rbdtEstudiante);
 			}
 			{
 				rbdtProfesor = new JRadioButton("Profesor");
+				rbdtProfesor.setBackground(new Color(173, 216, 230));
 				rbdtProfesor.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						rbdtProfesor.setSelected(true);
 						rbdtEstudiante.setSelected(false);
 					}
 				});
-				rbdtProfesor.setBounds(210, 215, 109, 23);
+				rbdtProfesor.setBounds(310, 339, 109, 23);
 				panel.add(rbdtProfesor);
 			}
 			{
 				spnDia = new JSpinner();
 				spnDia.setModel(new SpinnerNumberModel(1, 1, 31, 1));
-				spnDia.setBounds(142, 105, 43, 20);
+				spnDia.setBounds(217, 193, 83, 23);
 				panel.add(spnDia);
 			}
 			
 			spnMes = new JSpinner();
 			spnMes.setModel(new SpinnerNumberModel(1, 1, 12, 1));
-			spnMes.setBounds(199, 105, 43, 20);
+			spnMes.setBounds(310, 193, 83, 23);
 			panel.add(spnMes);
 			
 			SpnAño = new JSpinner();
 			SpnAño.setModel(new SpinnerDateModel(new Date(1648440000000L), null, new Date(1648440000000L), Calendar.DAY_OF_YEAR));
 			SpnAño.setEditor(new JSpinner.DateEditor(SpnAño, "yyyy"));
-			SpnAño.setBounds(258, 105, 83, 20);
+			SpnAño.setBounds(403, 193, 83, 23);
 			panel.add(SpnAño);
+			
+			JLabel lblTitulo = new JLabel("Registro de usurios");
+			lblTitulo.setForeground(new Color(0, 206, 209));
+			lblTitulo.setFont(new Font("Stencil", Font.PLAIN, 19));
+			lblTitulo.setBounds(180, 33, 239, 23);
+			panel.add(lblTitulo);
 		}
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(new Color(25, 25, 112));
 			buttonPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("Registrar");
+				okButton.setBackground(new Color(0, 128, 0));
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						Usuarios aux= null;
@@ -188,6 +217,7 @@ public class RegUsuario extends JDialog {
 			}
 			{
 				JButton cancelButton = new JButton("Cancelar");
+				cancelButton.setBackground(new Color(255, 140, 0));
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						dispose();
