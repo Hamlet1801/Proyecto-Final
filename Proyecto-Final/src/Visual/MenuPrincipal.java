@@ -12,6 +12,8 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.UIManager;
 import java.awt.Color;
+import java.awt.Dialog;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -110,6 +112,15 @@ public class MenuPrincipal extends JFrame {
 		menuBar.add(mnFigura);
 		
 		JMenuItem mntmCrearFigura = new JMenuItem("Crear Figura");
+		mntmCrearFigura.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CrearFigura fig = new CrearFigura();
+				fig.setVisible(true);
+			 
+			}
+		});
+		
+		
 		mnFigura.add(mntmCrearFigura);
 		
 		JMenu mnListaDeFigura = new JMenu("Lista de Figuras");
@@ -149,7 +160,7 @@ public class MenuPrincipal extends JFrame {
 		
 		JLabel lblFondo1 = new JLabel("");
 		lblFondo1.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/imagenes/Fp.png")));
-		lblFondo1.setBounds(0, 0, 727, 657);
+		lblFondo1.setBounds(-3, 11, 727, 657);
 		panel.add(lblFondo1);
 		
 		JLabel lblFondo2 = new JLabel("");

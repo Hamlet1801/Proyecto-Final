@@ -78,4 +78,6 @@ public class CrearFigura extends JFrame {
 		btnTrapecio.setBounds(307, 241, 107, 117);
 		panel.add(btnTrapecio);
 	}
+
+	
 }
