@@ -30,6 +30,8 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import java.awt.Toolkit;
@@ -175,6 +177,15 @@ public class RegUsuario extends JDialog {
 			lblTitulo.setFont(new Font("Stencil", Font.PLAIN, 19));
 			lblTitulo.setBounds(180, 33, 239, 23);
 			panel.add(lblTitulo);
+			
+			JLabel lblIcon = new JLabel("");
+			
+			lblIcon.setBounds(101, 11, 69, 54);
+			
+			ImageIcon Icon = new ImageIcon(getClass().getResource("/imagenes/registro.png"));
+			ImageIcon img = new ImageIcon(Icon.getImage().getScaledInstance(lblIcon.getWidth(), lblIcon.getHeight(), Image.SCALE_SMOOTH));
+			lblIcon.setIcon(img);
+			panel.add(lblIcon);
 		}
 		{
 			JPanel buttonPane = new JPanel();

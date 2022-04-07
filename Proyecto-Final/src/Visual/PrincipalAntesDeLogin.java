@@ -19,7 +19,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Principal extends JFrame {
+public class PrincipalAntesDeLogin extends JFrame {
 
 	private JPanel contentPane;
 	private Dimension dim;
@@ -31,7 +31,7 @@ public class Principal extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Principal frame = new Principal();
+					PrincipalAntesDeLogin frame = new PrincipalAntesDeLogin();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,9 +43,9 @@ public class Principal extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Principal() {
+	public PrincipalAntesDeLogin() {
 		setTitle("CENTRO DE ESTUDIOS");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/imagenes/icono.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(PrincipalAntesDeLogin.class.getResource("/imagenes/icono.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		dim = getToolkit().getScreenSize();
@@ -73,7 +73,7 @@ public class Principal extends JFrame {
 		panel.add(lblTitulo);
 		
 		JLabel lblFondo = new JLabel("");
-		lblFondo.setIcon(new ImageIcon(Principal.class.getResource("/imagenes/icono.png")));
+		lblFondo.setIcon(new ImageIcon(PrincipalAntesDeLogin.class.getResource("/imagenes/icono.png")));
 		lblFondo.setBounds(418, 0, 912, 657);
 		panel.add(lblFondo);
 		

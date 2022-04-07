@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Toolkit;
+import javax.swing.UIManager;
 
 public class ListProfesores extends JDialog {
 
@@ -50,7 +51,7 @@ public class ListProfesores extends JDialog {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ListProfesores.class.getResource("/imagenes/icono.png")));
 		getContentPane().setBackground(new Color(25, 25, 112));
 		setTitle("Listado de profesores");
-		setBounds(100, 100, 502, 425);
+		setBounds(200, 200, 617, 555);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(25, 25, 112));
@@ -59,7 +60,7 @@ public class ListProfesores extends JDialog {
 		contentPanel.setLayout(new BorderLayout(0, 0));
 		{
 			JScrollPane scrollPane = new JScrollPane();
-			scrollPane.setViewportBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			scrollPane.setViewportBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 			contentPanel.add(scrollPane, BorderLayout.CENTER);
 			{
 				//CREACION DE LOS ENCABEZADOS******************
