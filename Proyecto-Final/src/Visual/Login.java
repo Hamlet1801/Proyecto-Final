@@ -20,7 +20,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPasswordField;
 
-public class Ingresar extends JFrame {
+public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtUsuario;
@@ -33,8 +33,9 @@ public class Ingresar extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				
 				try {
-					Ingresar frame = new Ingresar();
+					Login frame = new Login();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,14 +47,15 @@ public class Ingresar extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ingresar() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Ingresar.class.getResource("/imagenes/icono.png")));
+	
+	public Login() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/imagenes/icono.png")));
 		setTitle("Ingresar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 487, 401);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(25, 25, 112));
+		contentPane.setBackground(new Color(0, 0, 128));
 		contentPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -66,7 +68,7 @@ public class Ingresar extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblFondo = new JLabel("");
-		lblFondo.setIcon(new ImageIcon(Ingresar.class.getResource("/imagenes/icono.png")));
+		lblFondo.setIcon(new ImageIcon(Login.class.getResource("/imagenes/icono.png")));
 		lblFondo.setBounds(0, 0, 451, 340);
 		panel.add(lblFondo);
 		

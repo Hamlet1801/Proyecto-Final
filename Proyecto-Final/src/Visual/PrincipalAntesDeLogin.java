@@ -19,7 +19,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Principal extends JFrame {
+public class PrincipalAntesDeLogin extends JFrame {
 
 	private JPanel contentPane;
 	private Dimension dim;
@@ -31,7 +31,7 @@ public class Principal extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Principal frame = new Principal();
+					PrincipalAntesDeLogin frame = new PrincipalAntesDeLogin();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,16 +43,16 @@ public class Principal extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Principal() {
+	public PrincipalAntesDeLogin() {
 		setTitle("CENTRO DE ESTUDIOS");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/imagenes/icono.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(PrincipalAntesDeLogin.class.getResource("/imagenes/icono.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		dim = getToolkit().getScreenSize();
 		setSize(dim.width, dim.height-50);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(25, 25, 112));
+		contentPane.setBackground(new Color(0, 0, 128));
 		contentPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -67,13 +67,13 @@ public class Principal extends JFrame {
 		JLabel lblTitulo = new JLabel("GEOMETR\u00CDA \r\nDIVERTIDA");
 		lblTitulo.setBackground(new Color(255, 255, 255));
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitulo.setForeground(new Color(0, 255, 255));
+		lblTitulo.setForeground(new Color(255, 20, 147));
 		lblTitulo.setFont(new Font("Ravie", Font.PLAIN, 28));
 		lblTitulo.setBounds(23, 47, 545, 107);
 		panel.add(lblTitulo);
 		
 		JLabel lblFondo = new JLabel("");
-		lblFondo.setIcon(new ImageIcon(Principal.class.getResource("/imagenes/icono.png")));
+		lblFondo.setIcon(new ImageIcon(PrincipalAntesDeLogin.class.getResource("/imagenes/icono.png")));
 		lblFondo.setBounds(418, 0, 912, 657);
 		panel.add(lblFondo);
 		
@@ -88,14 +88,14 @@ public class Principal extends JFrame {
 		
 		JLabel lblentrar = new JLabel("Ingresa para comenzar esta aventura ");
 		lblentrar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 17));
-		lblentrar.setForeground(new Color(255, 0, 0));
+		lblentrar.setForeground(new Color(0, 191, 255));
 		lblentrar.setBounds(127, 304, 441, 89);
 		panel.add(lblentrar);
 		
 		JButton btnNewButton = new JButton("Ingresar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Ingresar ing = new Ingresar();
+				Login ing = new Login();
 				
 				ing.setVisible(true);
 				

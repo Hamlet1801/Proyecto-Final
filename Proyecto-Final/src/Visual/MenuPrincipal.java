@@ -68,7 +68,43 @@ public class MenuPrincipal extends JFrame {
 		menuBar.add(mnUsuario);
 		
 		JMenuItem mntmRegistrar = new JMenuItem("Registrar");
+		mntmRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RegUsuario regU = new RegUsuario();
+				regU.setModal(true);
+				regU.setVisible(true);
+				
+				
+			}
+		});
 		mnUsuario.add(mntmRegistrar);
+		
+		JMenu mnListaDeLosU = new JMenu("Lista De  Los Usuarios");
+		mnUsuario.add(mnListaDeLosU);
+		
+		JMenuItem mntmListaProfesores = new JMenuItem("Lista Profesores");
+		mntmListaProfesores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ListProfesores lP = new ListProfesores();
+				lP.setModal(true);
+				lP.setVisible(true);
+				
+			}
+		});
+		mnListaDeLosU.add(mntmListaProfesores);
+		
+		JMenuItem mntmListaEstudiantes = new JMenuItem("Lista Estudiante");
+		mntmListaEstudiantes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ListEstudiantes lE = new ListEstudiantes();
+				lE.setModal(true);
+				lE.setVisible(true);	
+				
+			}
+		});
+		mnListaDeLosU.add(mntmListaEstudiantes);
+		
+		
 		
 		JMenu mnFigura = new JMenu("Figuras");
 		menuBar.add(mnFigura);
@@ -120,6 +156,10 @@ public class MenuPrincipal extends JFrame {
 		lblFondo2.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/imagenes/Fp2.png")));
 		lblFondo2.setBounds(346, 0, 984, 657);
 		panel.add(lblFondo2);
+		
+		JMenu menu = new JMenu("New menu");
+		menu.setBounds(-13, 11, 107, 22);
+		panel.add(menu);
 	}
 }
 
