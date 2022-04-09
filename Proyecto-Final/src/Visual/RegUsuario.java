@@ -208,6 +208,7 @@ public class RegUsuario extends JDialog {
 						String spinnerValue= formater.format(SpnAño.getValue());
 						int año= Integer.parseInt(spinnerValue.substring(0, 4));
 						
+						
 						if(rbdtEstudiante.isSelected()) {
 							aux= new Estudiantes(matricula, nombre, contraseña, dia, mes, año, null, null);
 						}
@@ -219,6 +220,7 @@ public class RegUsuario extends JDialog {
 						CentroEstudios.getInstance1().insertarUser(aux);
 						JOptionPane.showMessageDialog(null, "Registro Exitoso", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 						Limpiar();
+						
 					}
 
 				});

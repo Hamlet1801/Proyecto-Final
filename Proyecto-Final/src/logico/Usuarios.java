@@ -1,6 +1,10 @@
 package logico;
 
-public abstract class Usuarios {
+import java.io.Serializable;
+
+public abstract class Usuarios  implements Serializable {
+	
+	private static final long seriaLVersionUID =1L;
 	
 	protected String matricula;
 	protected String nombre;
@@ -12,6 +16,7 @@ public abstract class Usuarios {
 	public Usuarios(String matricula, String nombre, String contraseña, int diaNacimiento, int mesNacimiento,
 			int añoNacimiento) {
 		super();
+		
 		this.matricula = matricula;
 		this.nombre = nombre;
 		this.contraseña = contraseña;
@@ -20,7 +25,6 @@ public abstract class Usuarios {
 		this.añoNacimiento = añoNacimiento;
 	}
 	
-
 	public String getMatricula() {
 		return matricula;
 	}

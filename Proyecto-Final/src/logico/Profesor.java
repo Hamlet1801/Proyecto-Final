@@ -10,14 +10,16 @@ public class Profesor extends Usuarios {
 	private ArrayList<Prisma> prismasProfesor;
 	private int cantFigurasCreadas;
 	
+	
+	
 	public Profesor(String matricula, String nombre, String contraseña, int diaNacimiento, int mesNacimiento,
-			int añoNacimiento, ArrayList<Prisma> prismasProfesor, int cantFigurasCreadas) {
+			int añoNacimiento, String tipo, int i) {
 		super(matricula, nombre, contraseña, diaNacimiento, mesNacimiento, añoNacimiento);
+		
 		this.prismasProfesor = prismasProfesor;
 		this.cantFigurasCreadas = cantFigurasCreadas;
 	}
-	
-	
+
 	public ArrayList<Prisma> getPrismasProfesor() {
 		return prismasProfesor;
 	}

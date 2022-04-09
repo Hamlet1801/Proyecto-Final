@@ -135,6 +135,9 @@ public class MenuPrincipal extends JFrame {
 		JMenu mnProfesor = new JMenu("Profesor");
 		menuBar.add(mnProfesor);
 		
+		JMenuItem mntmCrearGrupo = new JMenuItem("Crear Grupo");
+		mnProfesor.add(mntmCrearGrupo);
+		
 		JMenuItem mntmListaDeGrupos = new JMenuItem("Lista de Grupos ");
 		mnProfesor.add(mntmListaDeGrupos);
 		contentPane = new JPanel();
@@ -167,10 +170,6 @@ public class MenuPrincipal extends JFrame {
 		lblFondo2.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/imagenes/Fp2.png")));
 		lblFondo2.setBounds(346, 0, 984, 657);
 		panel.add(lblFondo2);
-		
-		JMenu menu = new JMenu("New menu");
-		menu.setBounds(-13, 11, 107, 22);
-		panel.add(menu);
 	}
 }
 
