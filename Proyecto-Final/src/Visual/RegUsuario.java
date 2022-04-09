@@ -175,12 +175,12 @@ public class RegUsuario extends JDialog {
 			JLabel lblTitulo = new JLabel("Registro de usurios");
 			lblTitulo.setForeground(new Color(0, 206, 209));
 			lblTitulo.setFont(new Font("Stencil", Font.PLAIN, 19));
-			lblTitulo.setBounds(180, 33, 239, 23);
+			lblTitulo.setBounds(234, 30, 239, 23);
 			panel.add(lblTitulo);
 			
 			JLabel lblIcon = new JLabel("");
 			
-			lblIcon.setBounds(101, 11, 69, 54);
+			lblIcon.setBounds(141, 11, 69, 54);
 			
 			ImageIcon Icon = new ImageIcon(getClass().getResource("/imagenes/registro.png"));
 			ImageIcon img = new ImageIcon(Icon.getImage().getScaledInstance(lblIcon.getWidth(), lblIcon.getHeight(), Image.SCALE_SMOOTH));
