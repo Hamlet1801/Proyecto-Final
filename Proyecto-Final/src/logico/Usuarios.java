@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public abstract class Usuarios  implements Serializable {
 	
-	private static final long seriaLVersionUID =1L;
 	
+	private static final long serialVersionUID = 1L;
 	protected String matricula;
 	protected String nombre;
 	protected String contraseña;

@@ -10,6 +10,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
+
+
+
+
 import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.Dialog;
@@ -24,6 +28,10 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.awt.event.ActionEvent;
 
 public class MenuPrincipal extends JFrame {
@@ -47,11 +55,32 @@ public class MenuPrincipal extends JFrame {
 			}
 		});
 	}
+	
 
 	/**
 	 * Create the frame.
 	 */
 	public MenuPrincipal() {
+		
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				FileOutputStream CentroDeEstudio2;
+			ObjectOutputStream CentroDeEstudioWrite;
+				try {
+					CentroDeEstudio2 = new  FileOutputStream("CentroDeEstudio.dat");
+				CentroDeEstudioWrite = new ObjectOutputStream(CentroDeEstudio2);
+					
+				}catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuPrincipal.class.getResource("/imagenes/icono.png")));
 		setForeground(new Color(100, 149, 237));
 		setTitle("CENTRO DE ESTUDIOS");
@@ -136,9 +165,26 @@ public class MenuPrincipal extends JFrame {
 		menuBar.add(mnProfesor);
 		
 		JMenuItem mntmCrearGrupo = new JMenuItem("Crear Grupo");
+		mntmCrearGrupo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CrearGrupo cG = new CrearGrupo();
+				cG.setModal(true);
+				cG.setVisible(true);
+			}
+			
+		});
 		mnProfesor.add(mntmCrearGrupo);
 		
 		JMenuItem mntmListaDeGrupos = new JMenuItem("Lista de Grupos ");
+		mntmListaDeGrupos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ListaGrupo lG = new ListaGrupo();
+				
+				lG.setVisible(true);
+				
+				
+			}
+		});
 		mnProfesor.add(mntmListaDeGrupos);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 0, 128));

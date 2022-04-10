@@ -1,20 +1,23 @@
 package logico;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CentroEstudios {
+public class CentroEstudios implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Prisma> misPrismas;
 	private ArrayList<Usuarios> misUsuarios;
 	private ArrayList<Grupo> misGrupos;
-	public static CentroEstudios centroestudios= null;
+	private  static CentroEstudios centroestudios;
+	private static Usuarios loginUsuarios;
 	
 	public CentroEstudios() {
 		super();
-		this.misPrismas = new ArrayList<Prisma>();
-		this.misUsuarios = new ArrayList<Usuarios>();
-		this.misGrupos = new ArrayList<Grupo>();
+		misPrismas = new ArrayList<Prisma>();
+		misUsuarios = new ArrayList<Usuarios>();
+		misGrupos = new ArrayList<Grupo>();
 	}
 	
 	
@@ -71,6 +74,44 @@ public class CentroEstudios {
 
 	public void setMisPrisma(ArrayList<Prisma> misPrisma) {
 		this.misPrismas = misPrisma;
+	}
+
+
+	public static CentroEstudios getCentroestudios() {
+		return centroestudios;
+	}
+
+
+	public static void setCentroestudios(CentroEstudios centroestudios) {
+		CentroEstudios.centroestudios = centroestudios;
+	}
+
+
+	public static Usuarios getLoginUsuarios() {
+		return loginUsuarios;
+	}
+
+
+	public static void setLoginUsuarios(Usuarios loginUsuarios) {
+		CentroEstudios.loginUsuarios = loginUsuarios;
+	}
+	
+	public void RegUsuario(Usuarios usuarios) {
+		misUsuarios.add(usuarios);
+		
+	}
+	
+	public boolean confirmLoging(String text, String text2) {
+		boolean Login = false;
+		for(Usuarios usuarios : misUsuarios) {
+			if(usuarios.getNombre().equals(text) && usuarios.getContraseña().equals(text2) ) {
+				loginUsuarios = usuarios;
+				Login = true;
+			}
+		}
+		
+		
+		return Login;
 	}
 
 

@@ -7,6 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+
+import logico.CentroEstudios;
+import logico.Usuarios;
+
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,6 +23,12 @@ import javax.swing.JButton;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 import javax.swing.JPasswordField;
 
@@ -25,7 +37,7 @@ public class Login extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtUsuario;
 	private JButton btnIngresar;
-	private JPasswordField jpassClave;
+	private JTextField txtContraseña;
 
 	/**
 	 * Launch the application.
@@ -33,6 +45,38 @@ public class Login extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				
+				FileInputStream CentroDeEstudio;
+				FileOutputStream CentroDeEstudio2;
+				ObjectInputStream CentroDeEstudioRead;
+				ObjectOutputStream CentroDeEstudioWrite;
+				try {
+					CentroDeEstudio = new FileInputStream ("CentroDeEstudio.dat");
+					CentroDeEstudioRead = new ObjectInputStream(CentroDeEstudio);
+					CentroEstudios temp = (CentroEstudios)CentroDeEstudioRead.readObject();
+					CentroEstudios.setCentroestudios(temp);
+					CentroDeEstudio.close();
+					CentroDeEstudioRead.close();
+				} catch (FileNotFoundException e) {
+					try {
+						CentroDeEstudio2 = new  FileOutputStream("CentroDeEstudio.dat");
+						CentroDeEstudioWrite = new ObjectOutputStream(CentroDeEstudio2);
+					    // Usuarios aux = new Usuarios ("Administrador", "Admin", "Admin", 1, 1, 2000);
+						//CentroEstudios.getInstance1().RegUsuario(aux);
+						CentroDeEstudioWrite.writeObject(CentroEstudios.getInstance1());
+						CentroDeEstudio2.close();
+						CentroDeEstudioWrite.close();
+					} catch (FileNotFoundException e1) {
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+					}
+				} catch (IOException e) {
+					
+					
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 				try {
 					Login frame = new Login();
@@ -67,6 +111,11 @@ public class Login extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		txtContraseña = new JTextField();
+		txtContraseña.setBounds(26, 149, 236, 23);
+		panel.add(txtContraseña);
+		txtContraseña.setColumns(10);
+		
 		JLabel lblFondo = new JLabel("");
 		lblFondo.setIcon(new ImageIcon(Login.class.getResource("/imagenes/icono.png")));
 		lblFondo.setBounds(0, 0, 451, 340);
@@ -93,28 +142,22 @@ public class Login extends JFrame {
 		btnIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				char[] clave = jpassClave.getPassword();
-				String claveFinal =new String(clave);
-				
-				
-				if (txtUsuario.getText().equals("Dibujo") && claveFinal.equals("123")) {
+				if(CentroEstudios.getInstance1().confirmLoging(txtUsuario.getText(),txtContraseña.getText())){
+					JOptionPane.showMessageDialog(null, "BIENVENIDO A GEOMETRIA DIVERTIDA", "INGRESASTE",JOptionPane.INFORMATION_MESSAGE);
+					MenuPrincipal frame = new MenuPrincipal();
 					dispose();
-					JOptionPane.showMessageDialog(null, "Bienvenido/a a Geometria Divertida", "Ingresaste", JOptionPane.INFORMATION_MESSAGE);
-					 MenuPrincipal mP = new MenuPrincipal();
-					 mP.setVisible(true);
-					 
+					frame.setVisible(true);
 				}else {
-					
-					JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);
-					
+					JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTA", "ERROR", JOptionPane.ERROR_MESSAGE);
 					txtUsuario.setText("");
-					jpassClave.setText("");
+					txtContraseña.setText("");
 					txtUsuario.requestFocus();
+					
 				}
 				
-				
 			}
-		
+				
+			
 			
 		});
 		
@@ -122,9 +165,5 @@ public class Login extends JFrame {
 		btnIngresar.setForeground(new Color(0, 0, 0));
 		btnIngresar.setBounds(79, 233, 89, 23);
 		panel.add(btnIngresar);
-		
-		jpassClave = new JPasswordField();
-		jpassClave.setBounds(26, 157, 236, 23);
-		panel.add(jpassClave);
 	}
 }

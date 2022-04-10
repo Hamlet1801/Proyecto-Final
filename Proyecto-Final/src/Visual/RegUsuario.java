@@ -9,9 +9,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+
 import logico.CentroEstudios;
 import logico.Estudiantes;
 import logico.Profesor;
+
 import logico.Usuarios;
 
 import javax.swing.JLabel;
@@ -211,10 +213,12 @@ public class RegUsuario extends JDialog {
 						
 						if(rbdtEstudiante.isSelected()) {
 							aux= new Estudiantes(matricula, nombre, contraseña, dia, mes, año, null, null);
+						;
 						}
 						
 						if(rbdtProfesor.isSelected()) {
 							aux= new Profesor(matricula, nombre, contraseña, dia, mes, año, null, 1);
+							
 						}
 						
 						CentroEstudios.getInstance1().insertarUser(aux);

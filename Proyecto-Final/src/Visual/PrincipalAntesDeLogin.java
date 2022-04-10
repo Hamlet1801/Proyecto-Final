@@ -72,6 +72,7 @@ public class PrincipalAntesDeLogin extends JFrame {
 		lblTitulo.setBounds(23, 47, 545, 107);
 		panel.add(lblTitulo);
 		
+		
 		JLabel lblFondo = new JLabel("");
 		lblFondo.setIcon(new ImageIcon(PrincipalAntesDeLogin.class.getResource("/imagenes/icono.png")));
 		lblFondo.setBounds(418, 0, 912, 657);
@@ -96,8 +97,10 @@ public class PrincipalAntesDeLogin extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Login ing = new Login();
-				
+			
 				ing.setVisible(true);
+					
+				
 				
 			}
 		});

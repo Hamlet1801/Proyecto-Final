@@ -8,12 +8,14 @@ public class Grupo {
 	private ArrayList<Estudiantes> grupoEstudiantes;
 	private Profesor profesor;
 	private ArrayList<Prisma> prismasGrupo;
+	private String nombre;
 	
-	public Grupo(ArrayList<Estudiantes> grupoEstudiantes, Profesor profesor, ArrayList<Prisma> prismasGrupo) {
+	public Grupo(ArrayList<Estudiantes> grupoEstudiantes, Profesor profesor, ArrayList<Prisma> prismasGrupo, String nombre) {
 		super();
 		this.grupoEstudiantes = grupoEstudiantes;
 		this.profesor = profesor;
 		this.prismasGrupo = prismasGrupo;
+		this.nombre = nombre;
 	}
 
 	
@@ -40,5 +42,17 @@ public class Grupo {
 	public void setPrismasGrupo(ArrayList<Prisma> prismasGrupo) {
 		this.prismasGrupo = prismasGrupo;
 	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	
 
 }
