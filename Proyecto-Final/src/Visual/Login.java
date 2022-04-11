@@ -59,9 +59,10 @@ public class Login extends JFrame {
 					CentroDeEstudioRead.close();
 				} catch (FileNotFoundException e) {
 					try {
+						
 						CentroDeEstudio2 = new  FileOutputStream("CentroDeEstudio.dat");
 						CentroDeEstudioWrite = new ObjectOutputStream(CentroDeEstudio2);
-					    // Usuarios aux = new Usuarios ("Administrador", "Admin", "Admin", 1, 1, 2000);
+					     //Usuarios aux = new Usuarios("Administrador", "Admin", "Admin", 1, 1, 2000);
 						//CentroEstudios.getInstance1().RegUsuario(aux);
 						CentroDeEstudioWrite.writeObject(CentroEstudios.getInstance1());
 						CentroDeEstudio2.close();
