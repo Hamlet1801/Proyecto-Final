@@ -16,6 +16,8 @@ import javax.swing.JSpinner;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Toolkit;
 
 public class Triangulo3D extends JDialog {
 
@@ -40,14 +42,19 @@ public class Triangulo3D extends JDialog {
 	 * Create the dialog.
 	 */
 	public Triangulo3D() {
+		setTitle("Crear Triangulo");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Triangulo3D.class.getResource("/imagenes/icono.png")));
 		setBounds(100, 100, 493, 462);
+		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(25, 25, 112));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(new BorderLayout(0, 0));
 		{
 			JPanel panel = new JPanel();
-			panel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Crear Triangulo", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+			panel.setBackground(new Color(0, 0, 0));
+			panel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Crear Triangulo", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(100, 149, 237)));
 			contentPanel.add(panel, BorderLayout.CENTER);
 			panel.setLayout(null);
 			
@@ -65,6 +72,8 @@ public class Triangulo3D extends JDialog {
 			}
 			
 			JLabel lblNewLabel = new JLabel("VerticeBX:");
+			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
+			lblNewLabel.setForeground(new Color(255, 255, 255));
 			lblNewLabel.setBounds(10, 45, 66, 14);
 			panel.add(lblNewLabel);
 			
@@ -73,6 +82,8 @@ public class Triangulo3D extends JDialog {
 			panel.add(spinner);
 			
 			JLabel lblVerticeby = new JLabel("VerticeBY:");
+			lblVerticeby.setFont(new Font("Tahoma", Font.BOLD, 11));
+			lblVerticeby.setForeground(new Color(255, 255, 255));
 			lblVerticeby.setBounds(10, 85, 66, 14);
 			panel.add(lblVerticeby);
 			
@@ -81,6 +92,8 @@ public class Triangulo3D extends JDialog {
 			panel.add(spinner_1);
 			
 			JLabel lblNewLabel_1 = new JLabel("Altura:");
+			lblNewLabel_1.setForeground(new Color(255, 255, 255));
+			lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 			lblNewLabel_1.setBounds(10, 133, 54, 14);
 			panel.add(lblNewLabel_1);
 			

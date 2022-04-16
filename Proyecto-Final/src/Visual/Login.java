@@ -10,6 +10,7 @@ import javax.swing.border.TitledBorder;
 
 
 import logico.CentroEstudios;
+import logico.User;
 import logico.Usuarios;
 
 
@@ -62,8 +63,8 @@ public class Login extends JFrame {
 						
 						CentroDeEstudio2 = new  FileOutputStream("CentroDeEstudio.dat");
 						CentroDeEstudioWrite = new ObjectOutputStream(CentroDeEstudio2);
-					     //Usuarios aux = new Usuarios("Administrador", "Admin", "Admin", 1, 1, 2000);
-						//CentroEstudios.getInstance1().RegUsuario(aux);
+					     User aux = new User("Administrador", "Admin", "Admin", 1, 1, 200, "tipo");
+						CentroEstudios.getInstance1().RegUsuario(aux);
 						CentroDeEstudioWrite.writeObject(CentroEstudios.getInstance1());
 						CentroDeEstudio2.close();
 						CentroDeEstudioWrite.close();

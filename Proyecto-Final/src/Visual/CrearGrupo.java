@@ -76,6 +76,7 @@ public class CrearGrupo extends JDialog {
 		lblIcon.setIcon(img);
 		panel.add(lblIcon);
 		
+		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNombre.setForeground(new Color(255, 255, 255));

@@ -103,9 +103,9 @@ public class CentroEstudios implements Serializable {
 	
 	public boolean confirmLoging(String text, String text2) {
 		boolean Login = false;
-		for(Usuarios usuarios : misUsuarios) {
-			if(usuarios.getNombre().equals(text) && usuarios.getContraseña().equals(text2) ) {
-				loginUsuarios = usuarios;
+		for(Usuarios user : misUsuarios) {
+			if(user.getNombre().equals(text) && user.getContraseña().equals(text2) ) {
+				loginUsuarios = user;
 				Login = true;
 			}
 		}

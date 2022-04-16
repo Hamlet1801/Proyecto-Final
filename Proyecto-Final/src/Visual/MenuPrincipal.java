@@ -95,6 +95,32 @@ public class MenuPrincipal extends JFrame {
 		menuBar.setBackground(new Color(100, 149, 237));
 		setJMenuBar(menuBar);
 		
+		
+		
+		JMenu mnFigura = new JMenu("Figuras");
+		menuBar.add(mnFigura);
+		
+		JMenuItem mntmCrearFigura = new JMenuItem("Crear Figura");
+		mntmCrearFigura.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CrearFigura fig = new CrearFigura();
+				fig.setVisible(true);
+			 
+			}
+		});
+		
+		
+		mnFigura.add(mntmCrearFigura);
+		
+		JMenu mnListaDeFigura = new JMenu("Lista de Figuras");
+		mnFigura.add(mnListaDeFigura);
+		
+		JMenuItem mntmListaDelProfesor = new JMenuItem("Lista de Figuras del Profesor");
+		mnListaDeFigura.add(mntmListaDelProfesor);
+		
+		JMenuItem mntmListaDelEstudiantes = new JMenuItem("Lista de Figuras del Estudiantes");
+		mnListaDeFigura.add(mntmListaDelEstudiantes);
+		
 		JMenu mnUsuario = new JMenu("Usuario");
 		menuBar.add(mnUsuario);
 		
@@ -134,32 +160,6 @@ public class MenuPrincipal extends JFrame {
 			}
 		});
 		mnListaDeLosU.add(mntmListaEstudiantes);
-		
-		
-		
-		JMenu mnFigura = new JMenu("Figuras");
-		menuBar.add(mnFigura);
-		
-		JMenuItem mntmCrearFigura = new JMenuItem("Crear Figura");
-		mntmCrearFigura.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CrearFigura fig = new CrearFigura();
-				fig.setVisible(true);
-			 
-			}
-		});
-		
-		
-		mnFigura.add(mntmCrearFigura);
-		
-		JMenu mnListaDeFigura = new JMenu("Lista de Figuras");
-		mnFigura.add(mnListaDeFigura);
-		
-		JMenuItem mntmListaDelProfesor = new JMenuItem("Lista de Figuras del Profesor");
-		mnListaDeFigura.add(mntmListaDelProfesor);
-		
-		JMenuItem mntmListaDelEstudiantes = new JMenuItem("Lista de Figuras del Estudiantes");
-		mnListaDeFigura.add(mntmListaDelEstudiantes);
 		
 		JMenu mnProfesor = new JMenu("Profesor");
 		menuBar.add(mnProfesor);
