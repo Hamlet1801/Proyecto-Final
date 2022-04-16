@@ -4,6 +4,8 @@ package logico;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+
+
 public class CentroEstudios implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -55,6 +57,8 @@ public class CentroEstudios implements Serializable {
 	public void insertarUser(Usuarios usuario) {
 		misUsuarios.add(usuario);
 	}
+	
+	
 
 
 
@@ -101,6 +105,7 @@ public class CentroEstudios implements Serializable {
 		
 	}
 	
+	
 	public boolean confirmLoging(String text, String text2) {
 		boolean Login = false;
 		for(Usuarios user : misUsuarios) {
@@ -115,6 +120,13 @@ public class CentroEstudios implements Serializable {
 	}
 
 
+	
+	}
+
+
+
+
+
 
 	
 	
@@ -125,4 +137,4 @@ public class CentroEstudios implements Serializable {
 	
 	
 
-}
+

@@ -9,6 +9,7 @@ public class Grupo {
 	private Profesor profesor;
 	private ArrayList<Prisma> prismasGrupo;
 	private String nombre;
+
 	
 	public Grupo(ArrayList<Estudiantes> grupoEstudiantes, Profesor profesor, ArrayList<Prisma> prismasGrupo, String nombre) {
 		super();
@@ -17,6 +18,9 @@ public class Grupo {
 		this.prismasGrupo = prismasGrupo;
 		this.nombre = nombre;
 	}
+	
+	
+
 
 	
 	public ArrayList<Estudiantes> getGrupoEstudiantes() {

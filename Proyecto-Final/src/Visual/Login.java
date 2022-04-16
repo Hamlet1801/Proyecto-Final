@@ -63,7 +63,7 @@ public class Login extends JFrame {
 						
 						CentroDeEstudio2 = new  FileOutputStream("CentroDeEstudio.dat");
 						CentroDeEstudioWrite = new ObjectOutputStream(CentroDeEstudio2);
-					     User aux = new User("Administrador", "Admin", "Admin", 1, 1, 200, "tipo");
+					     User aux = new User("Administrador", "Admin", "Admin", 1, 1, 200, "TIPO");
 						CentroEstudios.getInstance1().RegUsuario(aux);
 						CentroDeEstudioWrite.writeObject(CentroEstudios.getInstance1());
 						CentroDeEstudio2.close();

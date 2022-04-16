@@ -17,6 +17,9 @@ import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class CrearRectangulo extends JDialog {
 
@@ -44,7 +47,7 @@ public class CrearRectangulo extends JDialog {
 	public CrearRectangulo() {
 		setTitle("Crear Rectangulo");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(CrearRectangulo.class.getResource("/imagenes/icono.png")));
-		setBounds(100, 100, 580, 428);
+		setBounds(100, 100, 618, 513);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(25, 25, 112));
@@ -55,7 +58,7 @@ public class CrearRectangulo extends JDialog {
 			JPanel panel = new JPanel();
 			panel.setBackground(new Color(0, 0, 0));
 			panel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-			panel.setBounds(10, 11, 544, 329);
+			panel.setBounds(10, 11, 582, 414);
 			contentPanel.add(panel);
 			panel.setLayout(null);
 			{
@@ -104,23 +107,53 @@ public class CrearRectangulo extends JDialog {
 				JLabel lblIcono = new JLabel("New label");
 				lblIcono.setBackground(new Color(102, 205, 170));
 				
-				lblIcono.setBounds(388, 57, 135, 72);
+				lblIcono.setBounds(395, 33, 135, 72);
 				ImageIcon Icon = new ImageIcon(getClass().getResource("/imagenes/rectangulo (1).png" ));
 				ImageIcon img = new ImageIcon(Icon.getImage().getScaledInstance(lblIcono.getWidth(), lblIcono.getHeight(), Image.SCALE_SMOOTH));
 				lblIcono.setIcon(img);
 				panel.add(lblIcono);
 				{
-					JButton btnCrear = new JButton("Crear");
+					JButton btnCrear = new JButton("Crear 3D ");
 					btnCrear.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							Rectangulo3D rect = new Rectangulo3D ();
+							
 							rect.setVisible(true);
 						}
 					});
 					btnCrear.setBackground(new Color(0, 255, 0));
 					btnCrear.setFont(new Font("Tahoma", Font.BOLD, 15));
-					btnCrear.setBounds(200, 238, 172, 43);
+					btnCrear.setBounds(64, 361, 172, 43);
 					panel.add(btnCrear);
+				}
+				{
+					JPanel panel_1 = new JPanel();
+					panel_1.setBackground(new Color(0, 0, 139));
+					panel_1.setBorder(new TitledBorder(null, "Volumen", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(100, 149, 237)));
+					panel_1.setBounds(31, 193, 235, 157);
+					panel.add(panel_1);
+				}
+				{
+					JPanel panel_1 = new JPanel();
+					panel_1.setBackground(new Color(0, 0, 139));
+					panel_1.setBorder(new TitledBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Are\u00E1", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(100, 149, 237)), "Are\u00E1", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(100, 149, 237)));
+					panel_1.setBounds(312, 193, 235, 157);
+					panel.add(panel_1);
+				}
+				{
+					JButton btnCrear_1 = new JButton("Crear 2D ");
+					btnCrear_1.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseClicked(MouseEvent arg0) {
+                           Rectangulo2D rect = new Rectangulo2D ();
+							
+							rect.setVisible(true);
+						}
+					});
+					btnCrear_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+					btnCrear_1.setBackground(Color.GREEN);
+					btnCrear_1.setBounds(332, 361, 172, 43);
+					panel.add(btnCrear_1);
 				}
 				;
 			}
