@@ -112,7 +112,7 @@ public class CrearFigura extends JFrame {
 		JButton btnTriangulo = new JButton("Triangulo 3D/2D");
 		btnTriangulo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Triangulo3D tri = new Triangulo3D();
+				Triangulo tri = new Triangulo();
 				tri.setVisible(true);
 				
 				

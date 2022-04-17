@@ -19,17 +19,16 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Toolkit;
 
-public class Triangulo3D extends JDialog {
+public class Triangulo extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JPanel Pnltriangulo;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		try {
-			Triangulo3D dialog = new Triangulo3D();
+			Triangulo dialog = new Triangulo();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 	
@@ -41,9 +40,9 @@ public class Triangulo3D extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public Triangulo3D() {
+	public Triangulo() {
 		setTitle("Crear Triangulo");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Triangulo3D.class.getResource("/imagenes/icono.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Triangulo.class.getResource("/imagenes/icono.png")));
 		setBounds(100, 100, 493, 462);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
@@ -57,19 +56,6 @@ public class Triangulo3D extends JDialog {
 			panel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Crear Triangulo", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(100, 149, 237)));
 			contentPanel.add(panel, BorderLayout.CENTER);
 			panel.setLayout(null);
-			
-			{
-				
-				
-				Pnltriangulo = new JPanel();
-				Pnltriangulo.setBorder(new TitledBorder(null, "Figura", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-				Pnltriangulo.setBounds(10, 189, 230, 167);
-				panel.add(Pnltriangulo);
-				Pnltriangulo.setLayout(null);
-			
-				
-				
-			}
 			
 			JLabel lblNewLabel = new JLabel("VerticeBX:");
 			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
