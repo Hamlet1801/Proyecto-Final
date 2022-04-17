@@ -115,14 +115,7 @@ public class Triangulo extends JDialog {
 			}
 		}
 	}
-	@Override
-	public void paint (Graphics g) {
-		
-		super.paint(g);
-		int[] puntosx = {200,100,300};
-		int[] puntosy = {200,600,600};
-		g.fillPolygon(puntosx, puntosy, 3);
-	}
+	
 	
 	
 }
