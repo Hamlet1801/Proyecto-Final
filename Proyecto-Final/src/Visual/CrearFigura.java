@@ -40,6 +40,7 @@ public class CrearFigura extends JFrame {
 			}
 		});
 	}
+	
 
 	/**
 	 * Create the frame.
