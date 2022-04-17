@@ -184,6 +184,7 @@ public class CrearGrupo extends JDialog {
 				buttonPane.add(cancelButton);
 			}
 			
+			
 		}
 		cargarTabla();
 		}
