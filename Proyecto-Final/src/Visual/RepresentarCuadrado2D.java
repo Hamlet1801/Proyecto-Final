@@ -6,10 +6,12 @@ import javax.swing.JPanel;
 import java.awt.GraphicsConfiguration;
 import javax.media.j3d.BranchGroup;
 import javax.media.j3d.Canvas3D;
+import javax.media.j3d.TriangleArray;
+
 import com.sun.j3d.utils.geometry.ColorCube;
 import com.sun.j3d.utils.universe.SimpleUniverse;
 
-
+import javafx.scene.shape.Polygon;
 
 import java.awt.BorderLayout;
 
@@ -55,9 +57,8 @@ public class RepresentarCuadrado2D extends JPanel {
 public BranchGroup crearGrafo() {
 		
 		BranchGroup objetoraiz = new BranchGroup();
-		
-		
 	 objetoraiz.addChild(new ColorCube(0.2));
+		
 	 
 	 
 	 
