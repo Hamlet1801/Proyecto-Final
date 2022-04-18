@@ -174,7 +174,7 @@ public class TrianguloReg extends JDialog {
 						float altura = Float.valueOf(spnAltura.getValue().toString());
 						
 						aux = new Triangulo(verticex,verticey,altura);
-						CentroEstudios.getInstance1().insertarPrisma(aux);
+						CentroEstudios.getInstance().insertarPrisma(aux);
 						JOptionPane.showMessageDialog(null, "Operación exitosa", "Información", JOptionPane.INFORMATION_MESSAGE);
 						lblResult();
 						
@@ -200,9 +200,9 @@ public class TrianguloReg extends JDialog {
 		int i = 0;
 		float pre= 0 ;
 		
-       lblVolumen.setText (pre + " " +CentroEstudios.getInstance1().getMisPrismas().get(i).Volumen());
-       lblArealateralr.setText(pre + " " +CentroEstudios.getInstance1().getMisPrismas().get(i).areaLaterales());
-       lblAreatotalr.setText(pre + " " +CentroEstudios.getInstance1().getMisPrismas().get(i).areaTotales());
+       lblVolumen.setText (pre + " " +CentroEstudios.getInstance().getMisPrismas().get(i).Volumen());
+       lblArealateralr.setText(pre + " " +CentroEstudios.getInstance().getMisPrismas().get(i).areaLaterales());
+       lblAreatotalr.setText(pre + " " +CentroEstudios.getInstance().getMisPrismas().get(i).areaTotales());
        
        
 		

@@ -143,7 +143,7 @@ public class RegUsuario extends JDialog {
 							//aux= new Profesor(matricula, nombre, edad, contrasena, null, 0);
 						}
 						
-						CentroEstudios.getInstance1().insertarUser(aux);
+						CentroEstudios.getInstance().insertarUser(aux);
 						JOptionPane.showMessageDialog(null, "Registro Exitoso", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 						Limpiar();
 					}

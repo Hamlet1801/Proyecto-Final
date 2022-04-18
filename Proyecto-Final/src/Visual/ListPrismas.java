@@ -102,20 +102,20 @@ public class ListPrismas extends JDialog {
 	private void cargarTabla() {
 		model.setRowCount(0);
 		row= new Object[model.getColumnCount()];
-		for(int i=0; i< CentroEstudios.getInstance1().getMisUsuarios().size(); i++) {
-			if(CentroEstudios.getInstance1().getMisUsuarios().get(i) instanceof Estudiantes) {
-				row[0]= CentroEstudios.getInstance1().getMisUsuarios().get(i).getMatricula();
-				row[1]= CentroEstudios.getInstance1().getMisUsuarios().get(i).getNombre();
+		for(int i=0; i< CentroEstudios.getInstance().getMisUsuarios().size(); i++) {
+			if(CentroEstudios.getInstance().getMisUsuarios().get(i) instanceof Estudiantes) {
+				row[0]= CentroEstudios.getInstance().getMisUsuarios().get(i).getMatricula();
+				row[1]= CentroEstudios.getInstance().getMisUsuarios().get(i).getNombre();
 				model.addRow(row);
 			}
 			
-			if(CentroEstudios.getInstance1().getMisUsuarios().get(i) instanceof Profesor) {
-				row[0]= CentroEstudios.getInstance1().getMisUsuarios().get(i).getMatricula();
-				row[1]= CentroEstudios.getInstance1().getMisUsuarios().get(i).getNombre();
+			if(CentroEstudios.getInstance().getMisUsuarios().get(i) instanceof Profesor) {
+				row[0]= CentroEstudios.getInstance().getMisUsuarios().get(i).getMatricula();
+				row[1]= CentroEstudios.getInstance().getMisUsuarios().get(i).getNombre();
 				model.addRow(row);
 			}
 			
-			if(CentroEstudios.getInstance1().getMisPrismas().get(i) instanceof Cuadrado) {
+			if(CentroEstudios.getInstance().getMisPrismas().get(i) instanceof Cuadrado) {
 				
 			}
 

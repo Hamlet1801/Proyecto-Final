@@ -1,29 +1,24 @@
 package logico;
 
-
-import java.io.Serializable;
 import java.util.ArrayList;
 
-
-
-public class CentroEstudios implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class CentroEstudios {
+	
 	private ArrayList<Prisma> misPrismas;
 	private ArrayList<Usuarios> misUsuarios;
 	private ArrayList<Grupo> misGrupos;
-	private  static CentroEstudios centroestudios;
-	private static Usuarios loginUsuarios;
+	public static CentroEstudios centroestudios= null;
+	private float tamCubo;
 	
 	public CentroEstudios() {
 		super();
-		misPrismas = new ArrayList<Prisma>();
-		misUsuarios = new ArrayList<Usuarios>();
-		misGrupos = new ArrayList<Grupo>();
+		this.misPrismas = new ArrayList<Prisma>();
+		this.misUsuarios = new ArrayList<Usuarios>();
+		this.misGrupos = new ArrayList<Grupo>();
+		this.tamCubo = tamCubo;
 	}
 	
-	
-	public static CentroEstudios getInstance1() {
+	public static CentroEstudios getInstance() {
 		if(centroestudios== null) {
 			centroestudios= new CentroEstudios();
 		}
@@ -46,11 +41,11 @@ public class CentroEstudios implements Serializable {
 		this.misUsuarios = misUsuarios;
 	}
 
-	public ArrayList<Grupo> getMisGrupos1() {
+	public ArrayList<Grupo> getMisGrupos() {
 		return misGrupos;
 	}
 
-	public void setMisGrupos1(ArrayList<Grupo> misGrupos) {
+	public void setMisGrupos(ArrayList<Grupo> misGrupos) {
 		this.misGrupos = misGrupos;
 	}
 	
@@ -61,82 +56,41 @@ public class CentroEstudios implements Serializable {
 	public void insertarPrisma(Prisma prisma) {
 		misPrismas.add(prisma);
 	}
-
-
-
-	public ArrayList<Grupo> getMisGrupos() {
-		return misGrupos;
-	}
-
-	public void setMisGrupos(ArrayList<Grupo> misGrupos) {
-		this.misGrupos = misGrupos;
-	}
-
-
-	public ArrayList<Prisma> getMisPrisma() {
-		return misPrismas;
-	}
-
-
-	public void setMisPrisma(ArrayList<Prisma> misPrisma) {
-		this.misPrismas = misPrisma;
-	}
-
-
-	public static CentroEstudios getCentroestudios() {
-		return centroestudios;
-	}
-
-
-	public static void setCentroestudios(CentroEstudios centroestudios) {
-		CentroEstudios.centroestudios = centroestudios;
-	}
-
-
-	public static Usuarios getLoginUsuarios() {
-		return loginUsuarios;
-	}
-
-
-	public static void setLoginUsuarios(Usuarios loginUsuarios) {
-		CentroEstudios.loginUsuarios = loginUsuarios;
-	}
 	
-	public void RegUsuario(Usuarios usuarios) {
-		misUsuarios.add(usuarios);
+	public Usuarios buscarUserByMat(String matricula) {
+		Usuarios aux= null;
+		boolean encontrado = false;
+		int i =0;
 		
+		while(!encontrado && i<misUsuarios.size()) {
+			if(misUsuarios.get(i).getMatricula().equalsIgnoreCase(matricula)) {
+				aux= misUsuarios.get(i);
+				encontrado= true;
+			}
+			i++;
+		}
+		return aux;
 	}
 	
-	
-	public boolean confirmLoging(String text, String text2) {
-		boolean Login = false;
-		for(Usuarios user : misUsuarios) {
-			if(user.getNombre().equals(text) && user.getContraseña().equals(text2) ) {
-				loginUsuarios = user;
-				Login = true;
-			}
+	public void insertarPrismaUsuario(String matricula, Prisma prisma) {
+		
+		Usuarios usuario= buscarUserByMat(matricula);
+		if(usuario instanceof Estudiantes) {
+			((Estudiantes) usuario).getPrismasEstudiante().add(prisma);
 		}
 		
-		
-		return Login;
+		if(usuario instanceof Profesor) {
+			((Profesor) usuario).getPrismasProfesor().add(prisma);
+			((Profesor) usuario).setCantFigurasCreadas(+1);
+		}
 	}
 
-
-	
+	public float getTamCubo() {
+		return tamCubo;
 	}
 
+	public void setTamCubo(float tamCubo) {
+		this.tamCubo = tamCubo;
+	}
 
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-
-
+}

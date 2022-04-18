@@ -97,11 +97,11 @@ public class ListaGrupo extends JDialog {
 private void cargarTabla() {
 	model.setRowCount(0);
 	row= new Object[model.getColumnCount()];
-	for(int i=0; i< CentroEstudios.getInstance1().getMisGrupos().size(); i++) {
-		if(CentroEstudios.getInstance1().getMisGrupos().get(i) instanceof Grupo) {
-			row[0]= CentroEstudios.getInstance1().getMisGrupos().get(i).getNombre();
-			row[1]= CentroEstudios.getInstance1().getMisGrupos().get(i).getProfesor();
-			row[3]= CentroEstudios.getInstance1().getMisGrupos().get(i).getGrupoEstudiantes();
+	for(int i=0; i< CentroEstudios.getInstance().getMisGrupos().size(); i++) {
+		if(CentroEstudios.getInstance().getMisGrupos().get(i) instanceof Grupo) {
+			row[0]= CentroEstudios.getInstance().getMisGrupos().get(i).getNombre();
+			row[1]= CentroEstudios.getInstance().getMisGrupos().get(i).getProfesor();
+			row[3]= CentroEstudios.getInstance().getMisGrupos().get(i).getGrupoEstudiantes();
 			
 			model.addRow(row);
 		}

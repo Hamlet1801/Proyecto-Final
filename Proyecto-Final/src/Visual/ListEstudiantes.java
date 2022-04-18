@@ -84,11 +84,11 @@ public class ListEstudiantes extends JDialog {
 	private void cargarTabla() {
 		model.setRowCount(0);
 		row= new Object[model.getColumnCount()];
-		for(int i=0; i< CentroEstudios.getInstance1().getMisUsuarios().size(); i++) {
-			if(CentroEstudios.getInstance1().getMisUsuarios().get(i) instanceof Estudiantes) {
-				row[0]= CentroEstudios.getInstance1().getMisUsuarios().get(i).getMatricula();
-				row[1]= CentroEstudios.getInstance1().getMisUsuarios().get(i).getNombre();
-				row[2]= CentroEstudios.getInstance1().getMisUsuarios().get(i).getAñoNacimiento();
+		for(int i=0; i< CentroEstudios.getInstance().getMisUsuarios().size(); i++) {
+			if(CentroEstudios.getInstance().getMisUsuarios().get(i) instanceof Estudiantes) {
+				row[0]= CentroEstudios.getInstance().getMisUsuarios().get(i).getMatricula();
+				row[1]= CentroEstudios.getInstance().getMisUsuarios().get(i).getNombre();
+				row[2]= CentroEstudios.getInstance().getMisUsuarios().get(i).getAñoNacimiento();
 				model.addRow(row);
 			}
 		}
