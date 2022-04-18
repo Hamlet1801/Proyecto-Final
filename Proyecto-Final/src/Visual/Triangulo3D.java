@@ -36,6 +36,7 @@ public class Triangulo3D extends JPanel {
 	public Triangulo3D() {
 		GraphicsConfiguration config = SimpleUniverse.getPreferredConfiguration();
 		Canvas3D canvas3d = new Canvas3D(config);
+		canvas3d.setDoubleBufferEnable(true);
 		setLayout(new BorderLayout());
 		add(canvas3d);
 		
@@ -50,7 +51,7 @@ public class Triangulo3D extends JPanel {
 		System.setProperty("sun.awt.noerasebackground", "true");
 		JFrame ventana= new JFrame("Triangulo3D");
 		Triangulo3D  panel = new Triangulo3D ();
-		ventana.add(panel);
+		ventana.getContentPane().add(panel);
 		ventana.setSize(700, 700);
 		ventana.setVisible(true);
 		ventana.setLocationRelativeTo(null);

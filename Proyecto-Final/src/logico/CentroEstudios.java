@@ -58,7 +58,9 @@ public class CentroEstudios implements Serializable {
 		misUsuarios.add(usuario);
 	}
 	
-	
+	public void insertarPrisma(Prisma prisma) {
+		misPrismas.add(prisma);
+	}
 
 
 
