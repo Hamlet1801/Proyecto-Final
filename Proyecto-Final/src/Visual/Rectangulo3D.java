@@ -60,6 +60,8 @@ public class Rectangulo3D<NewTextureLoader>  extends JPanel {
 		mouseG.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
 		objetoRaiz.addChild(mouseG);
 		
+	
+		
 		Appearance app =new Appearance();
 		
 	    PolygonAttributes polyattr = new PolygonAttributes();
