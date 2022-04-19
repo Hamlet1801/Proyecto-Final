@@ -213,41 +213,45 @@ public class Regfigura extends JDialog {
 		}
 		{
 			PanelCubo = new JPanel();
+			PanelCubo.setBackground(Color.BLACK);
 			PanelCubo.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 			PanelCubo.setBounds(10, 273, 557, 99);
 			contentPanel.add(PanelCubo);
 			PanelCubo.setLayout(null);
 			{
 				JLabel lblNewLabel = new JLabel("Altura:");
-				lblNewLabel.setBounds(10, 11, 58, 14);
+				lblNewLabel.setForeground(Color.WHITE);
+				lblNewLabel.setBounds(20, 11, 58, 14);
 				PanelCubo.add(lblNewLabel);
 			}
 			{
 				JLabel lblNewLabel_1 = new JLabel("VerticeX:");
-				lblNewLabel_1.setBounds(230, 11, 58, 14);
+				lblNewLabel_1.setForeground(Color.WHITE);
+				lblNewLabel_1.setBounds(200, 11, 58, 14);
 				PanelCubo.add(lblNewLabel_1);
 			}
 			
 			spnAltura = new JSpinner();
 			spnAltura.setEnabled(false);
 			spnAltura.setModel(new SpinnerNumberModel(new Float(0), new Float(0), null, new Float(1)));
-			spnAltura.setBounds(10, 36, 86, 20);
+			spnAltura.setBounds(20, 36, 100, 23);
 			PanelCubo.add(spnAltura);
 			
 			spnVerticex = new JSpinner();
 			spnVerticex.setEnabled(false);
 			spnVerticex.setModel(new SpinnerNumberModel(new Float(0), new Float(0), null, new Float(1)));
-			spnVerticex.setBounds(230, 36, 86, 20);
+			spnVerticex.setBounds(200, 36, 100, 23);
 			PanelCubo.add(spnVerticex);
 			
 			JLabel lblNewLabel_2 = new JLabel("VerticeY:");
-			lblNewLabel_2.setBounds(418, 11, 73, 14);
+			lblNewLabel_2.setForeground(Color.WHITE);
+			lblNewLabel_2.setBounds(390, 11, 73, 14);
 			PanelCubo.add(lblNewLabel_2);
 			
 			spnVerticey = new JSpinner();
 			spnVerticey.setEnabled(false);
 			spnVerticey.setModel(new SpinnerNumberModel(new Float(0), new Float(0), null, new Float(1)));
-			spnVerticey.setBounds(418, 36, 86, 20);
+			spnVerticey.setBounds(390, 36, 100, 23);
 			PanelCubo.add(spnVerticey);
 		}
 		
@@ -353,82 +357,92 @@ public class Regfigura extends JDialog {
 		panelUsuario.add(btnSalir);
 		
 		panelTriangulo = new JPanel();
+		panelTriangulo.setBackground(Color.BLACK);
 		panelTriangulo.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panelTriangulo.setBounds(10, 273, 557, 99);
 		contentPanel.add(panelTriangulo);
 		panelTriangulo.setLayout(null);
 		
 		lblNewLabel_6 = new JLabel("VerticeX:");
+		lblNewLabel_6.setForeground(Color.WHITE);
 		lblNewLabel_6.setSize(58, 14);
-		lblNewLabel_6.setLocation(10, 11);
+		lblNewLabel_6.setLocation(20, 11);
 		panelTriangulo.add(lblNewLabel_6);
 		
 		spnverticeXTriangulo = new JSpinner();
 		spnverticeXTriangulo.setModel(new SpinnerNumberModel(new Float(0), new Float(0), null, new Float(1)));
-		spnverticeXTriangulo.setBounds(10, 36, 86, 20);
+		spnverticeXTriangulo.setBounds(20, 36, 100, 23);
 		panelTriangulo.add(spnverticeXTriangulo);
 		
 		lblNewLabel_7 = new JLabel("VerticeY");
-		lblNewLabel_7.setBounds(230, 11, 58, 14);
+		lblNewLabel_7.setForeground(new Color(255, 255, 255));
+		lblNewLabel_7.setBounds(200, 11, 58, 14);
 		panelTriangulo.add(lblNewLabel_7);
 		
 		spnverticeYTriangulo = new JSpinner();
 		spnverticeYTriangulo.setModel(new SpinnerNumberModel(new Float(0), new Float(0), null, new Float(1)));
-		spnverticeYTriangulo.setBounds(230, 36, 86, 20);
+		spnverticeYTriangulo.setBounds(200, 36, 100, 23);
 		panelTriangulo.add(spnverticeYTriangulo);
 		
 		JLabel lblNewLabel_9 = new JLabel("Altura:");
-		lblNewLabel_9.setBounds(418, 11, 73, 14);
+		lblNewLabel_9.setForeground(Color.WHITE);
+		lblNewLabel_9.setBounds(390, 11, 73, 14);
 		panelTriangulo.add(lblNewLabel_9);
 		
 		spnAlturatriangulo = new JSpinner();
-		spnAlturatriangulo.setBounds(418, 36, 86, 20);
+		spnAlturatriangulo.setBounds(390, 36, 100, 23);
 		panelTriangulo.add(spnAlturatriangulo);
 		
 		panelEsfera = new JPanel();
+		panelEsfera.setBackground(new Color(0, 0, 0));
 		panelEsfera.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panelEsfera.setBounds(10, 273, 557, 99);
 		contentPanel.add(panelEsfera);
 		panelEsfera.setLayout(null);
 		
 		lblNewLabel_8 = new JLabel("Diametro:");
+		lblNewLabel_8.setForeground(new Color(255, 255, 255));
 		lblNewLabel_8.setSize(73, 14);
-		lblNewLabel_8.setLocation(10, 11);
+		lblNewLabel_8.setLocation(20, 11);
 		panelEsfera.add(lblNewLabel_8);
 		
 		spnDiametro = new JSpinner();
 		spnDiametro.setModel(new SpinnerNumberModel(new Float(0), new Float(0), null, new Float(1)));
-		spnDiametro.setBounds(10, 36, 86, 20);
+		spnDiametro.setBounds(20, 36, 100, 23);
 		panelEsfera.add(spnDiametro);
 		
 		JPanel panelRectangulo = new JPanel();
+		panelRectangulo.setBackground(new Color(0, 0, 0));
 		panelRectangulo.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panelRectangulo.setBounds(10, 273, 557, 99);
 		contentPanel.add(panelRectangulo);
 		panelRectangulo.setLayout(null);
 		
 		JLabel lblNewLabel_10 = new JLabel("VerticeX:");
-		lblNewLabel_10.setBounds(10, 11, 80, 14);
+		lblNewLabel_10.setForeground(new Color(255, 255, 255));
+		lblNewLabel_10.setBounds(20, 11, 80, 14);
 		panelRectangulo.add(lblNewLabel_10);
 		
 		JLabel lblNewLabel_11 = new JLabel("VerticeY:");
-		lblNewLabel_11.setBounds(230, 11, 80, 14);
+		lblNewLabel_11.setForeground(new Color(255, 255, 255));
+		lblNewLabel_11.setBounds(200, 11, 80, 14);
 		panelRectangulo.add(lblNewLabel_11);
 		
 		JLabel lblNewLabel_12 = new JLabel("New label");
-		lblNewLabel_12.setBounds(418, 11, 80, 14);
+		lblNewLabel_12.setForeground(new Color(255, 255, 255));
+		lblNewLabel_12.setBounds(390, 11, 80, 14);
 		panelRectangulo.add(lblNewLabel_12);
 		
 		spnverticexRectangulo = new JSpinner();
-		spnverticexRectangulo.setBounds(10, 36, 86, 20);
+		spnverticexRectangulo.setBounds(20, 36, 100, 23);
 		panelRectangulo.add(spnverticexRectangulo);
 		
 		spnverticeyRectangulo = new JSpinner();
-		spnverticeyRectangulo.setBounds(230, 36, 86, 20);
+		spnverticeyRectangulo.setBounds(200, 36, 100, 23);
 		panelRectangulo.add(spnverticeyRectangulo);
 		
 		spnalturaRectangulo = new JSpinner();
-		spnalturaRectangulo.setBounds(418, 36, 86, 20);
+		spnalturaRectangulo.setBounds(390, 36, 100, 23);
 		panelRectangulo.add(spnalturaRectangulo);
 		{
 			JPanel buttonPane = new JPanel();
