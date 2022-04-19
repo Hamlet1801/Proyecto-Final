@@ -20,6 +20,8 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Toolkit;
 
 public class ListPrismas extends JDialog {
 
@@ -47,9 +49,12 @@ public class ListPrismas extends JDialog {
 	 * Create the dialog.
 	 */
 	public ListPrismas() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ListPrismas.class.getResource("/imagenes/icono.png")));
 		setTitle("Listado de prismas");
-		setBounds(100, 100, 493, 457);
+		setBounds(100, 100, 583, 501);
+		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(25, 25, 112));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(new BorderLayout(0, 0));
@@ -75,6 +80,7 @@ public class ListPrismas extends JDialog {
 		}
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(new Color(0, 0, 0));
 			buttonPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);

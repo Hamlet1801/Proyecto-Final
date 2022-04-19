@@ -40,6 +40,8 @@ public class CrearGrupo extends JDialog {
 	private JTextField txtProfesor;
 	  private DefaultTableModel model;
 		private Object row[];
+		 
+			private JTable table;
 
 	/**
 	 * Launch the application.
@@ -98,7 +100,7 @@ public class CrearGrupo extends JDialog {
 		panel.add(lblNombre);
 		
 		textNombre = new JTextField();
-		textNombre.setBounds(225, 147, 376, 23);
+		textNombre.setBounds(225, 147, 388, 23);
 		panel.add(textNombre);
 		textNombre.setColumns(10);
 		
@@ -109,42 +111,55 @@ public class CrearGrupo extends JDialog {
 		panel.add(lblProfesor);
 		
 		txtProfesor = new JTextField();
-		txtProfesor.setBounds(225, 217, 376, 23);
+		txtProfesor.setBounds(225, 217, 388, 23);
 		panel.add(txtProfesor);
 		txtProfesor.setColumns(10);
 		
-		JPanel panelLista = new JPanel();
-		panelLista.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panelLista.setBackground(new Color(25, 25, 112));
-		panelLista.setBounds(33, 264, 227, 159);
-		panel.add(panelLista);
-		panelLista.setLayout(null);
+		JLabel label = new JLabel("Estudiantes");
+		label.setForeground(Color.WHITE);
+		label.setFont(new Font("Tahoma", Font.BOLD, 15));
+		label.setBounds(71, 297, 105, 14);
+		panel.add(label);
 		
-		JList list = new JList();
-		list.setBounds(10, 146, 205, -134);
-		panelLista.add(list);
+		JButton button = new JButton("Lista De estudiantes");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ListaEstudianteGrupo LeG = new ListaEstudianteGrupo();
+				LeG.setModal(true);
+				LeG.setVisible(true);
+				
+			}
+		});
+		button.setForeground(Color.BLACK);
+		button.setFont(new Font("Tahoma", Font.BOLD, 11));
+		button.setBackground(new Color(135, 206, 235));
+		button.setBounds(52, 341, 156, 41);
+		panel.add(button);
 		
-		JPanel panelListaF = new JPanel();
-		panelListaF.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panelListaF.setBackground(new Color(25, 25, 112));
-		panelListaF.setBounds(394, 264, 241, 159);
-		panel.add(panelListaF);
-		panelListaF.setLayout(null);
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_1.setBackground(new Color(25, 25, 112));
+		panel_1.setBounds(237, 263, 376, 174);
+		panel.add(panel_1);
 		
-		JList list_1 = new JList();
-		list_1.setBounds(10, 144, 221, -137);
-		panelListaF.add(list_1);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 356, 152);
+		panel_1.add(scrollPane);
 		
-		JButton btnNewButton = new JButton(">>>");
-		btnNewButton.setFont(new Font("Verdana", Font.BOLD, 15));
-		btnNewButton.setBounds(283, 310, 89, 23);
-		panel.add(btnNewButton);
+		String encabezados[]= {"Matricula", "Nombre", "Edad"};
+		model= new DefaultTableModel();
+		model.setColumnIdentifiers(encabezados);
+		table = new JTable();
+		table.setModel(model);
+		scrollPane.setViewportView(table);
 		
-		JButton btnNewButton_1 = new JButton("<<<");
-		btnNewButton_1.setFont(new Font("Verdana", Font.BOLD, 15));
-		btnNewButton_1.setBounds(283, 357, 89, 23);
-		panel.add(btnNewButton_1);
-		
+		JTable table = new JTable();
+		scrollPane.setColumnHeaderView(table);
+	
+	
+	
+	{
 		
 			
 		
@@ -167,6 +182,7 @@ public class CrearGrupo extends JDialog {
 						
 						CentroEstudios.getInstance().insertarGrupo(aux);
 						JOptionPane.showMessageDialog(null, "Creacion De Grupo Exitodo", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+						Limpiar();
 					}
 				});
 				okButton.setActionCommand("OK");
@@ -181,6 +197,17 @@ public class CrearGrupo extends JDialog {
 			
 			
 		}
+		
 	}
 	}
+
+		
+
+	private void Limpiar() {
+		
+		textNombre.setText("");
+		txtProfesor.setText("");
+		
+	}
+}
 

@@ -129,8 +129,8 @@ public class CentroEstudios {
 			CentroEstudios.centroestudios = centroestudios;
 		}
 
-		public void insertarGrupo(Grupo aux) {
-                    misGrupos.add(aux);
+		public void insertarGrupo(Grupo grupo) {
+                    misGrupos.add(grupo);
 
 			
 		}

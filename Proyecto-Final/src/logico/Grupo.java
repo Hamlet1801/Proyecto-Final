@@ -24,6 +24,8 @@ public class Grupo {
 
 	
 	public ArrayList<Estudiantes> getGrupoEstudiantes() {
+		
+		
 		return grupoEstudiantes;
 	}
 
@@ -58,5 +60,5 @@ public class Grupo {
 	}
 	
 	
-
+	
 }

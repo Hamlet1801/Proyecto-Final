@@ -15,19 +15,27 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
 import logico.CentroEstudios;
-import logico.Profesor;
-import java.awt.Toolkit;
-import java.awt.Color;
+import logico.Estudiantes;
 
-public class ListProfesores extends JDialog {
+import logico.Usuarios;
+
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class ListaEstudianteGrupo extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTable table;
 	//NEVAS VARIABLES PARA LA TABLA+****************************
     private DefaultTableModel model;
 	private Object row[];
+	private int mode ;
+	protected Usuarios aux;
 
 	/**
+	 * 
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
@@ -43,10 +51,10 @@ public class ListProfesores extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public ListProfesores() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(ListProfesores.class.getResource("/imagenes/icono.png")));
-		setTitle("Listado de profesores");
-		setBounds(100, 100, 639, 559);
+	public ListaEstudianteGrupo() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ListaEstudianteGrupo.class.getResource("/imagenes/icono.png")));
+		setTitle("Listado de Estudiantes");
+		setBounds(100, 100, 598, 507);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(25, 25, 112));
@@ -78,8 +86,32 @@ public class ListProfesores extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						dispose();
 					}
-					
 				});
+				{
+					JButton okButton = new JButton("Seleccionar");
+					okButton.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseClicked(MouseEvent arg0) {
+							int seleccion = table.getSelectedRow();
+							int row = table.convertRowIndexToModel(seleccion);
+							if(mode==1) {
+								if(seleccion!=-1){
+									okButton.setEnabled(true);
+									
+									 aux = CentroEstudios.getInstance().buscarUserByMat((String)model.getValueAt(seleccion, 0));
+									
+								}else{	
+									okButton.setEnabled(false);
+									
+								}
+							}
+						}
+					});
+					okButton.setEnabled(false);
+				
+					okButton.setBackground(new Color(0, 255, 0));
+					buttonPane.add(okButton);
+				}
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}
@@ -91,13 +123,16 @@ public class ListProfesores extends JDialog {
 		model.setRowCount(0);
 		row= new Object[model.getColumnCount()];
 		for(int i=0; i< CentroEstudios.getInstance().getMisUsuarios().size(); i++) {
-			if(CentroEstudios.getInstance().getMisUsuarios().get(i) instanceof Profesor) {
+			if(CentroEstudios.getInstance().getMisUsuarios().get(i) instanceof Estudiantes) {
 				row[0]= CentroEstudios.getInstance().getMisUsuarios().get(i).getMatricula();
 				row[1]= CentroEstudios.getInstance().getMisUsuarios().get(i).getNombre();
-				row[2]= CentroEstudios.getInstance().getMisUsuarios().get(i).getEdad();			
+				row[2]= CentroEstudios.getInstance().getMisUsuarios().get(i).getEdad();
 				model.addRow(row);
 			}
 		}
 	}
 
 }
+
+
+
