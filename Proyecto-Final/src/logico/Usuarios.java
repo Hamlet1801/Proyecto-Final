@@ -9,20 +9,16 @@ public abstract class Usuarios  implements Serializable {
 	protected String matricula;
 	protected String nombre;
 	protected String contraseña;
-	protected int diaNacimiento;
-	protected int mesNacimiento;
-	protected int añoNacimiento;
+	protected String edad;
 	
-	public Usuarios(String matricula, String nombre, String contraseña, int diaNacimiento, int mesNacimiento,
-			int añoNacimiento) {
+	public Usuarios(String matricula, String nombre, String contraseña, String edad) {
 		super();
 		
 		this.matricula = matricula;
 		this.nombre = nombre;
 		this.contraseña = contraseña;
-		this.diaNacimiento = diaNacimiento;
-		this.mesNacimiento = mesNacimiento;
-		this.añoNacimiento = añoNacimiento;
+		this.edad= edad;
+	
 	}
 	
 	public String getMatricula() {
@@ -49,30 +45,16 @@ public abstract class Usuarios  implements Serializable {
 		this.contraseña = contraseña;
 	}
 
-	public int getDiaNacimiento() {
-		return diaNacimiento;
+	public String getEdad() {
+		return edad;
 	}
 
-	public void setDiaNacimiento(int diaNacimiento) {
-		this.diaNacimiento = diaNacimiento;
-	}
-
-	public int getMesNacimiento() {
-		return mesNacimiento;
-	}
-
-	public void setMesNacimiento(int mesNacimiento) {
-		this.mesNacimiento = mesNacimiento;
-	}
-
-	public int getAñoNacimiento() {
-		return añoNacimiento;
-	}
-
-	public void setAñoNacimiento(int añoNacimiento) {
-		this.añoNacimiento = añoNacimiento;
+	public void setEdad( String edad) {
+		this.edad = edad;
 	}
 	
+	
+
 
 }
 	

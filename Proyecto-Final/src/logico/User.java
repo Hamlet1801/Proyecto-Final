@@ -8,9 +8,8 @@ public class User extends Usuarios implements Serializable {
 	private String tipo;
 	
 
-	public User(String matricula, String nombre, String contraseña, int diaNacimiento, int mesNacimiento,
-			int añoNacimiento, String tipo) {
-		super(matricula, nombre, contraseña, diaNacimiento, mesNacimiento, añoNacimiento);
+	public User(String matricula, String nombre, String contraseña,String edad , String tipo) {
+		super(matricula, nombre, contraseña, edad);
 		// TODO Auto-generated constructor stub
 		
 		
@@ -27,3 +26,4 @@ public class User extends Usuarios implements Serializable {
 		this.tipo = tipo;
 	}
 }
+

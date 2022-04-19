@@ -103,7 +103,7 @@ public class MenuPrincipal extends JFrame {
 		JMenuItem mntmCrearFigura = new JMenuItem("Crear Figura");
 		mntmCrearFigura.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CrearFigura fig = new CrearFigura();
+				Regfigura fig = new Regfigura();
 				fig.setVisible(true);
 			 
 			}
@@ -218,4 +218,5 @@ public class MenuPrincipal extends JFrame {
 		panel.add(lblFondo2);
 	}
 }
+
 

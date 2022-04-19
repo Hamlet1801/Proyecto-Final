@@ -41,10 +41,13 @@ public class RegUsuario extends JDialog {
 			dialog.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 		}
 	}
+	
 
 	/**
+	 * 
 	 * Create the dialog.
 	 */
 	public RegUsuario() {
@@ -136,11 +139,11 @@ public class RegUsuario extends JDialog {
 						String contrasena= txtContrasena.getText();
 						
 						if(rbtnEstudiante.isSelected()) {
-							//aux= new Estudiantes(matricula, nombre, edad, contrasena, null);
+							aux= new Estudiantes(matricula, nombre, edad,contrasena," tipo", null);
 						}
 						
 						if(rbtnProfesor.isSelected()) {
-							//aux= new Profesor(matricula, nombre, edad, contrasena, null, 0);
+							aux= new Profesor(matricula, nombre, edad, contrasena, null, 0);
 						}
 						
 						CentroEstudios.getInstance().insertarUser(aux);

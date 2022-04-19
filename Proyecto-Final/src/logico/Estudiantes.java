@@ -11,14 +11,14 @@ public class Estudiantes extends Usuarios {
 	
 
 	
-	public Estudiantes(String matricula, String nombre, String contraseña, int diaNacimiento, int mesNacimiento,
-			int añoNacimiento, String tipo, Object object) {
-		super(matricula, nombre, contraseña, diaNacimiento, mesNacimiento, añoNacimiento);
+	public Estudiantes(String matricula, String nombre, String contraseña, String edad , String tipo, Object object) {
+		super(matricula, nombre, contraseña, edad);
 		this.misPorfesores = misPorfesores;
 		this.prismasEstudiante = prismasEstudiante;
 
 		
 	}
+	
 
 	public ArrayList<Profesor> getMisPorfesores() {
 		return misPorfesores;

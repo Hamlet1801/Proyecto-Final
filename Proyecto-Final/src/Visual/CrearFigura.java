@@ -10,6 +10,9 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.Toolkit;
 import javax.swing.border.TitledBorder;
+
+import logico.Triangulo;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
@@ -112,7 +115,7 @@ public class CrearFigura extends JFrame {
 		JButton btnTriangulo = new JButton("Triangulo 3D/2D");
 		btnTriangulo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TrianguloReg tri = new TrianguloReg();
+				Triangulo3D tri = new Triangulo3D();
 				tri.setVisible(true);
 				
 				

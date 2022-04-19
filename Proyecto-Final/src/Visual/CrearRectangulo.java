@@ -136,8 +136,8 @@ public class CrearRectangulo extends JDialog {
 				{
 					JPanel panel_1 = new JPanel();
 					panel_1.setBackground(new Color(0, 0, 139));
-					panel_1.setBorder(new TitledBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Are\u00E1", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(100, 149, 237)), "Are\u00E1", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(100, 149, 237)));
-					panel_1.setBounds(312, 193, 235, 157);
+					panel_1.setBorder(new TitledBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Are\u00E1", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(100, 149, 237)), "\u00C1rea Lateral", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(100, 149, 237)));
+					panel_1.setBounds(312, 193, 235, 72);
 					panel.add(panel_1);
 				}
 				{
@@ -155,6 +155,12 @@ public class CrearRectangulo extends JDialog {
 					btnCrear_1.setBounds(332, 361, 172, 43);
 					panel.add(btnCrear_1);
 				}
+				
+				JPanel panel_1 = new JPanel();
+				panel_1.setBorder(new TitledBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Are\u00E1", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(100, 149, 237)), "\u00C1rea Total", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(100, 149, 237)));
+				panel_1.setBackground(new Color(0, 0, 139));
+				panel_1.setBounds(312, 278, 235, 72);
+				panel.add(panel_1);
 				;
 			}
 		}
@@ -173,5 +179,4 @@ public class CrearRectangulo extends JDialog {
 			}
 		}
 	}
-
 }

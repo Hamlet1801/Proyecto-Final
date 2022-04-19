@@ -9,6 +9,7 @@ public class CentroEstudios {
 	private ArrayList<Grupo> misGrupos;
 	public static CentroEstudios centroestudios= null;
 	private float tamCubo;
+	private static Usuarios loginUsuarios;
 	
 	public CentroEstudios() {
 		super();
@@ -16,6 +17,7 @@ public class CentroEstudios {
 		this.misUsuarios = new ArrayList<Usuarios>();
 		this.misGrupos = new ArrayList<Grupo>();
 		this.tamCubo = tamCubo;
+		
 	}
 	
 	public static CentroEstudios getInstance() {
@@ -92,5 +94,47 @@ public class CentroEstudios {
 	public void setTamCubo(float tamCubo) {
 		this.tamCubo = tamCubo;
 	}
+	public static Usuarios getLoginUsuarios() {
+		return loginUsuarios;
+	}
+
+
+	public static void setLoginUsuarios(Usuarios loginUsuarios) {
+		CentroEstudios.loginUsuarios = loginUsuarios;
+	}
+	
+	
+
+	public boolean confirmLoging(String text, String text2) {
+		boolean Login = false;
+		for(Usuarios user : misUsuarios) {
+			if(user.getNombre().equals(text) && user.getContraseña().equals(text2) ) {
+				loginUsuarios = user;
+				Login = true;
+		
+	}
 
 }
+		
+		return Login;
+	}
+
+	
+		public void RegUsuario(Usuarios usuarios) {
+			misUsuarios.add(usuarios);
+			
+		}
+
+		public static void setCentroestudios(CentroEstudios centroestudios) {
+			CentroEstudios.centroestudios = centroestudios;
+		}
+
+		public void insertarGrupo(Grupo aux) {
+                    misGrupos.add(aux);
+
+			
+		}
+
+		
+	}
+

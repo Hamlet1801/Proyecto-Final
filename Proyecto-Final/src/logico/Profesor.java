@@ -12,9 +12,8 @@ public class Profesor extends Usuarios {
 	
 	
 	
-	public Profesor(String matricula, String nombre, String contraseña, int diaNacimiento, int mesNacimiento,
-			int añoNacimiento, String tipo, int i) {
-		super(matricula, nombre, contraseña, diaNacimiento, mesNacimiento, añoNacimiento);
+	public Profesor(String matricula, String nombre, String contraseña, String edad, String tipo, int i) {
+		super(matricula, nombre, contraseña, edad);
 		
 		this.prismasProfesor = prismasProfesor;
 		this.cantFigurasCreadas = cantFigurasCreadas;

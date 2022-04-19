@@ -88,7 +88,7 @@ public class ListEstudiantes extends JDialog {
 			if(CentroEstudios.getInstance().getMisUsuarios().get(i) instanceof Estudiantes) {
 				row[0]= CentroEstudios.getInstance().getMisUsuarios().get(i).getMatricula();
 				row[1]= CentroEstudios.getInstance().getMisUsuarios().get(i).getNombre();
-				row[2]= CentroEstudios.getInstance().getMisUsuarios().get(i).getAñoNacimiento();
+				row[2]= CentroEstudios.getInstance().getMisUsuarios().get(i).getEdad();
 				model.addRow(row);
 			}
 		}

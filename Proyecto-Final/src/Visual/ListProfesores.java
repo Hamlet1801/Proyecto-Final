@@ -73,6 +73,7 @@ public class ListProfesores extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						dispose();
 					}
+					
 				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
@@ -88,7 +89,7 @@ public class ListProfesores extends JDialog {
 			if(CentroEstudios.getInstance().getMisUsuarios().get(i) instanceof Profesor) {
 				row[0]= CentroEstudios.getInstance().getMisUsuarios().get(i).getMatricula();
 				row[1]= CentroEstudios.getInstance().getMisUsuarios().get(i).getNombre();
-				row[2]= CentroEstudios.getInstance().getMisUsuarios().get(i).getAñoNacimiento();			
+				row[2]= CentroEstudios.getInstance().getMisUsuarios().get(i).getEdad();			
 				model.addRow(row);
 			}
 		}

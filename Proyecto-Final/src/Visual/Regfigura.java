@@ -59,6 +59,7 @@ public class Regfigura extends JDialog {
 	private JButton btnSalir;
 
 	/**
+	 * 
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
@@ -71,12 +72,13 @@ public class Regfigura extends JDialog {
 		}
 	}
 
+	
 	/**
 	 * Create the dialog.
 	 */
 	public Regfigura() {
 		setTitle("Crear Figuras");
-		setBounds(100, 100, 583, 464);
+		setBounds(100, 100, 589, 458);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -370,7 +372,7 @@ public class Regfigura extends JDialog {
 							float profundidad= Float.valueOf(spnProfundidadCubo.getValue().toString());
 							if(altura== base) {
 								prisma= new Cuadrado (altura, base, profundidad);
-								//CentroEstudios.getInstance1().setTamCubo(altura);
+								CentroEstudios.getInstance().setTamCubo(altura);
 								cubo cubox = new cubo();
 								cubox.setModal(true);
 								cubox.setVisible(true);

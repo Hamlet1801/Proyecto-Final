@@ -57,15 +57,16 @@ public class cubo extends JDialog {
 
 	private BranchGroup crearGrafoEscena() {
 		
+		
         BranchGroup objetoRaiz= new BranchGroup();
 		
 		TransformGroup objetoGiro= new TransformGroup();
 		objetoGiro.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);;
 		objetoRaiz.addChild(objetoGiro);
 		
-		//ColorCube cubo= new ColorCube(CentroEstudios.getInstance1().getTamCubo()/10);
+		ColorCube cubo= new ColorCube(CentroEstudios.getInstance().getTamCubo()/10);
 		
-	    //objetoGiro.addChild(cubo);
+	    objetoGiro.addChild(cubo);
 	    
 	    Alpha rotacionAlpha= new Alpha(-1,3000);
 	    

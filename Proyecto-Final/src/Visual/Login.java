@@ -55,16 +55,17 @@ public class Login extends JFrame {
 					CentroDeEstudio = new FileInputStream ("CentroDeEstudio.dat");
 					CentroDeEstudioRead = new ObjectInputStream(CentroDeEstudio);
 					CentroEstudios temp = (CentroEstudios)CentroDeEstudioRead.readObject();
-					//CentroEstudios.setCentroEstudios(temp);
+					CentroEstudios.setCentroestudios(temp);
 					CentroDeEstudio.close();
 					CentroDeEstudioRead.close();
+					
 				} catch (FileNotFoundException e) {
 					try {
 						
 						CentroDeEstudio2 = new  FileOutputStream("CentroDeEstudio.dat");
 						CentroDeEstudioWrite = new ObjectOutputStream(CentroDeEstudio2);
-					     User aux = new User("Administrador", "Admin", "Admin", 1, 1, 200, "TIPO");
-						//CentroEstudios.getInstance().RegUsuario(aux);
+					     User aux = new User("Administrador", "Admin", "Admin", "edad", "TIPO");
+						CentroEstudios.getInstance().RegUsuario(aux);
 						CentroDeEstudioWrite.writeObject(CentroEstudios.getInstance());
 						CentroDeEstudio2.close();
 						CentroDeEstudioWrite.close();
@@ -144,9 +145,9 @@ public class Login extends JFrame {
 		btnIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				/*if(CentroEstudios.getInstance().confirmLoging(txtUsuario.getText(),txtContraseña.getText())){
+				if(CentroEstudios.getInstance().confirmLoging(txtUsuario.getText(),txtContraseña.getText())){
 					JOptionPane.showMessageDialog(null, "BIENVENIDO A GEOMETRIA DIVERTIDA", "INGRESASTE",JOptionPane.INFORMATION_MESSAGE);
-					MenuPrincipal frame = new MenuPrincipal();
+					Principal frame = new Principal();
 					dispose();
 					frame.setVisible(true);
 				}else {
@@ -155,7 +156,7 @@ public class Login extends JFrame {
 					txtContraseña.setText("");
 					txtUsuario.requestFocus();
 					
-				}*/
+				}
 				
 			}
 				
