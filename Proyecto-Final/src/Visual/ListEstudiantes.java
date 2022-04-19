@@ -48,7 +48,7 @@ public class ListEstudiantes extends JDialog {
 	public ListEstudiantes() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ListEstudiantes.class.getResource("/imagenes/icono.png")));
 		setTitle("Listado de Estudiantes");
-		setBounds(100, 100, 502, 425);
+		setBounds(100, 100,  639, 559);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(25, 25, 112));

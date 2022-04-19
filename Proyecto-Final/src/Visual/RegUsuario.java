@@ -181,11 +181,11 @@ public class RegUsuario extends JDialog {
 						String contrasena= txtContrasena.getText();
 						
 						if(rbtnEstudiante.isSelected()) {
-							aux= new Estudiantes(matricula, nombre, edad,contrasena," tipo", null);
+							aux= new Estudiantes(matricula, nombre,contrasena,edad, null,0);
 						}
 						
 						if(rbtnProfesor.isSelected()) {
-							aux= new Profesor(matricula, nombre, edad, contrasena, null, 0);
+							aux= new Profesor(matricula, nombre, contrasena,edad, null, 0);
 						}
 						
 						CentroEstudios.getInstance().insertarUser(aux);

@@ -51,7 +51,7 @@ public class ListPrismas extends JDialog {
 	public ListPrismas() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ListPrismas.class.getResource("/imagenes/icono.png")));
 		setTitle("Listado de prismas");
-		setBounds(100, 100, 583, 501);
+		setBounds(100, 100,  639, 559);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(25, 25, 112));

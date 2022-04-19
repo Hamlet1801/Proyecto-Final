@@ -49,7 +49,7 @@ public class ListaGrupo extends JDialog {
 		
 		setTitle("Lista De Los Grupos");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ListaGrupo.class.getResource("/imagenes/icono.png")));
-		setBounds(100, 100, 620, 514);
+		setBounds(100, 100,  639, 559);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(25, 25, 112));
@@ -58,7 +58,7 @@ public class ListaGrupo extends JDialog {
 		contentPanel.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 584, 420);
+		scrollPane.setBounds(10, 11, 603, 465);
 		contentPanel.add(scrollPane);
 		scrollPane.setViewportBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPanel.add(scrollPane, BorderLayout.CENTER);
