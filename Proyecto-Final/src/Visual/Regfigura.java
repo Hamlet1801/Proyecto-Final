@@ -270,7 +270,7 @@ public class Regfigura extends JDialog {
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String contrasenaTemp= txtBusqueda.getText();
-				Usuarios usuario= null;
+				//Usuarios usuario= null;
 				
 				for (Usuarios userr : CentroEstudios.getInstance().getMisUsuarios()) {
 					if(userr.getContraseña().equalsIgnoreCase(contrasenaTemp)) {
@@ -455,7 +455,8 @@ public class Regfigura extends JDialog {
 						
 						
 						CentroEstudios.getInstance().insertarPrisma(prisma);
-						CentroEstudios.getInstance().insertarPrismaUsuario(txtMatbusqueda.getText(), prisma);
+						//CentroEstudios.getInstance().insertarPrismaUsuario(txtMatbusqueda.getText(), prisma);
+						JOptionPane.showMessageDialog(null, "Registro Exitoso", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 						Limpiar();
 					}
 				});
