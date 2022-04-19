@@ -30,6 +30,8 @@ import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SpinnerNumberModel;
+import java.awt.Toolkit;
+import java.awt.Font;
 
 public class Regfigura extends JDialog {
 
@@ -82,21 +84,27 @@ public class Regfigura extends JDialog {
 	 * Create the dialog.
 	 */
 	public Regfigura() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Regfigura.class.getResource("/imagenes/icono.png")));
 		setTitle("Crear Figuras");
-		setBounds(100, 100, 589, 458);
+		setBounds(100, 100, 593, 457);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPanel.setBackground(new Color(25, 25, 112));
+		contentPanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		{
 			JPanel panelFigura = new JPanel();
-			panelFigura.setBorder(new TitledBorder(null, "Figuras:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-			panelFigura.setBounds(0, 182, 567, 80);
+			panelFigura.setBackground(new Color(0, 0, 0));
+			panelFigura.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Figuras:", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(100, 149, 237)));
+			panelFigura.setBounds(10, 182, 557, 80);
 			contentPanel.add(panelFigura);
 			panelFigura.setLayout(null);
 			{
 				rbtnCubo = new JRadioButton("Cuadrado");
+				rbtnCubo.setBackground(new Color(0, 0, 0));
+				rbtnCubo.setForeground(new Color(255, 255, 255));
+				rbtnCubo.setFont(new Font("Tahoma", Font.BOLD, 11));
 				rbtnCubo.setEnabled(false);
 				rbtnCubo.setSelected(true);
 				rbtnCubo.addActionListener(new ActionListener() {
@@ -114,11 +122,14 @@ public class Regfigura extends JDialog {
 						}
 					}
 				});
-				rbtnCubo.setBounds(6, 30, 85, 23);
+				rbtnCubo.setBounds(26, 30, 86, 23);
 				panelFigura.add(rbtnCubo);
 			}
 			{
 				rbtnRectangulo = new JRadioButton("Rectangulo");
+				rbtnRectangulo.setBackground(new Color(0, 0, 0));
+				rbtnRectangulo.setForeground(new Color(255, 255, 255));
+				rbtnRectangulo.setFont(new Font("Tahoma", Font.BOLD, 11));
 				rbtnRectangulo.setEnabled(false);
 				rbtnRectangulo.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -132,11 +143,14 @@ public class Regfigura extends JDialog {
 						panelEsfera.setVisible(false);
 					}
 				});
-				rbtnRectangulo.setBounds(117, 30, 97, 23);
+				rbtnRectangulo.setBounds(125, 30, 106, 23);
 				panelFigura.add(rbtnRectangulo);
 			}
 			{
 				rbtnCono = new JRadioButton("Triangulo");
+				rbtnCono.setBackground(new Color(0, 0, 0));
+				rbtnCono.setForeground(new Color(255, 255, 255));
+				rbtnCono.setFont(new Font("Tahoma", Font.BOLD, 11));
 				rbtnCono.setEnabled(false);
 				rbtnCono.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -151,11 +165,14 @@ public class Regfigura extends JDialog {
 						
 					}
 				});
-				rbtnCono.setBounds(252, 30, 85, 23);
+				rbtnCono.setBounds(233, 30, 106, 23);
 				panelFigura.add(rbtnCono);
 			}
 			{
 				rbtnEsfera = new JRadioButton("Esfera");
+				rbtnEsfera.setBackground(new Color(0, 0, 0));
+				rbtnEsfera.setForeground(new Color(255, 255, 255));
+				rbtnEsfera.setFont(new Font("Tahoma", Font.BOLD, 11));
 				rbtnEsfera.setEnabled(false);
 				rbtnEsfera.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -169,11 +186,14 @@ public class Regfigura extends JDialog {
 						PanelCubo.setVisible(false);
 					}
 				});
-				rbtnEsfera.setBounds(356, 30, 85, 23);
+				rbtnEsfera.setBounds(341, 30, 86, 23);
 				panelFigura.add(rbtnEsfera);
 			}
 			{
 				rbtnCilindro = new JRadioButton("Cilindro");
+				rbtnCilindro.setForeground(new Color(255, 255, 255));
+				rbtnCilindro.setBackground(new Color(0, 0, 0));
+				rbtnCilindro.setFont(new Font("Tahoma", Font.BOLD, 11));
 				rbtnCilindro.setEnabled(false);
 				rbtnCilindro.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -187,14 +207,14 @@ public class Regfigura extends JDialog {
 						panelEsfera.setVisible(false);
 					}
 				});
-				rbtnCilindro.setBounds(476, 30, 85, 23);
+				rbtnCilindro.setBounds(429, 30, 96, 23);
 				panelFigura.add(rbtnCilindro);
 			}
 		}
 		{
 			PanelCubo = new JPanel();
 			PanelCubo.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-			PanelCubo.setBounds(0, 273, 567, 99);
+			PanelCubo.setBounds(10, 273, 557, 99);
 			contentPanel.add(PanelCubo);
 			PanelCubo.setLayout(null);
 			{
@@ -232,41 +252,49 @@ public class Regfigura extends JDialog {
 		}
 		
 		JPanel panelUsuario = new JPanel();
-		panelUsuario.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Usuario:", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panelUsuario.setBounds(0, 0, 557, 171);
+		panelUsuario.setBackground(new Color(0, 0, 0));
+		panelUsuario.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Usuario:", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(100, 149, 237)));
+		panelUsuario.setBounds(10, 11, 557, 160);
 		contentPanel.add(panelUsuario);
 		panelUsuario.setLayout(null);
 		
 		txtBusqueda = new JTextField();
-		txtBusqueda.setBounds(359, 33, 188, 20);
+		txtBusqueda.setBounds(340, 68, 188, 23);
 		panelUsuario.add(txtBusqueda);
 		txtBusqueda.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Contrase\u00F1a:");
-		lblNewLabel_3.setBounds(474, 11, 73, 14);
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_3.setBounds(371, 33, 130, 14);
 		panelUsuario.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Nombre:");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_4.setBounds(10, 33, 102, 14);
 		panelUsuario.add(lblNewLabel_4);
 		
 		txtNombusqueda = new JTextField();
 		txtNombusqueda.setEditable(false);
-		txtNombusqueda.setBounds(10, 58, 289, 20);
+		txtNombusqueda.setBounds(10, 58, 289, 23);
 		panelUsuario.add(txtNombusqueda);
 		txtNombusqueda.setColumns(10);
 		
 		JLabel lblNewLabel_5 = new JLabel("Matricula:");
-		lblNewLabel_5.setBounds(10, 89, 73, 14);
+		lblNewLabel_5.setForeground(new Color(255, 255, 255));
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_5.setBounds(10, 89, 89, 14);
 		panelUsuario.add(lblNewLabel_5);
 		
 		txtMatbusqueda = new JTextField();
 		txtMatbusqueda.setEditable(false);
-		txtMatbusqueda.setBounds(10, 114, 289, 20);
+		txtMatbusqueda.setBounds(10, 114, 289, 23);
 		panelUsuario.add(txtMatbusqueda);
 		txtMatbusqueda.setColumns(10);
 		
 		btnBuscar = new JButton("Aceptar");
+		btnBuscar.setBackground(new Color(0, 255, 0));
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String contrasenaTemp= txtBusqueda.getText();
@@ -302,10 +330,11 @@ public class Regfigura extends JDialog {
 				}
 			}
 		});
-		btnBuscar.setBounds(458, 64, 89, 23);
+		btnBuscar.setBounds(439, 114, 89, 23);
 		panelUsuario.add(btnBuscar);
 		
 		btnSalir = new JButton("Salir");
+		btnSalir.setBackground(new Color(255, 165, 0));
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				txtNombusqueda.setText("");
@@ -320,12 +349,12 @@ public class Regfigura extends JDialog {
 				spnVerticey.setEnabled(false);
 			}
 		});
-		btnSalir.setBounds(359, 64, 89, 23);
+		btnSalir.setBounds(340, 114, 89, 23);
 		panelUsuario.add(btnSalir);
 		
 		panelTriangulo = new JPanel();
 		panelTriangulo.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panelTriangulo.setBounds(0, 273, 567, 99);
+		panelTriangulo.setBounds(10, 273, 557, 99);
 		contentPanel.add(panelTriangulo);
 		panelTriangulo.setLayout(null);
 		
@@ -357,7 +386,8 @@ public class Regfigura extends JDialog {
 		panelTriangulo.add(spnAlturatriangulo);
 		
 		panelEsfera = new JPanel();
-		panelEsfera.setBounds(0, 273, 567, 99);
+		panelEsfera.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelEsfera.setBounds(10, 273, 557, 99);
 		contentPanel.add(panelEsfera);
 		panelEsfera.setLayout(null);
 		
@@ -372,7 +402,8 @@ public class Regfigura extends JDialog {
 		panelEsfera.add(spnDiametro);
 		
 		JPanel panelRectangulo = new JPanel();
-		panelRectangulo.setBounds(0, 273, 567, 99);
+		panelRectangulo.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelRectangulo.setBounds(10, 273, 557, 99);
 		contentPanel.add(panelRectangulo);
 		panelRectangulo.setLayout(null);
 		
@@ -401,11 +432,14 @@ public class Regfigura extends JDialog {
 		panelRectangulo.add(spnalturaRectangulo);
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(new Color(0, 0, 0));
+			buttonPane.setForeground(new Color(0, 0, 0));
 			buttonPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				btnCrear = new JButton("Crear");
+				btnCrear.setBackground(new Color(0, 255, 0));
 				btnCrear.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						Prisma prisma= null;
@@ -465,6 +499,7 @@ public class Regfigura extends JDialog {
 			}
 			{
 				btnCancelar = new JButton("Cancelar");
+				btnCancelar.setBackground(new Color(255, 165, 0));
 				btnCancelar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						dispose();
