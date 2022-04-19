@@ -28,7 +28,7 @@ public class ListaEstudianteGrupo extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTable table;
-	//NEVAS VARIABLES PARA LA TABLA+****************************
+	
     private DefaultTableModel model;
 	private Object row[];
 	private int mode ;
@@ -92,21 +92,21 @@ public class ListaEstudianteGrupo extends JDialog {
 					okButton.addMouseListener(new MouseAdapter() {
 						@Override
 						public void mouseClicked(MouseEvent arg0) {
-							int seleccion = table.getSelectedRow();
-							int row = table.convertRowIndexToModel(seleccion);
-							if(mode==1) {
-								if(seleccion!=-1){
-									okButton.setEnabled(true);
+							int row = -1;
+				    		row = table.getSelectedRow();
+				    		if(row>-1){
+				    			okButton.setEnabled(true);
 									
-									 aux = CentroEstudios.getInstance().buscarUserByMat((String)model.getValueAt(seleccion, 0));
-									
-								}else{	
-									okButton.setEnabled(false);
+									 aux = CentroEstudios.getInstance().buscarUserByMat((String)model.getValueAt(row, 0));
 									
 								}
-							}
-						}
+						}	
+								
+						
+							
+						
 					});
+			
 					okButton.setEnabled(false);
 				
 					okButton.setBackground(new Color(0, 255, 0));

@@ -64,7 +64,7 @@ public class ListaGrupo extends JDialog {
 		contentPanel.add(scrollPane, BorderLayout.CENTER);
 		{
 			
-			String encabezados[]= { "Nombre", "profesor", "Cantidad de Estudiantes"};
+			String encabezados[]= { "Nombre", "profesor", "Estudiantes"};
 			model= new DefaultTableModel();
 			model.setColumnIdentifiers(encabezados);
 			table = new JTable();
@@ -91,6 +91,7 @@ public class ListaGrupo extends JDialog {
 	
 	cargarTabla();
 	
+	
 }
 
 
@@ -101,8 +102,7 @@ private void cargarTabla() {
 		if(CentroEstudios.getInstance().getMisGrupos().get(i) instanceof Grupo) {
 			row[0]= CentroEstudios.getInstance().getMisGrupos().get(i).getNombre();
 			row[1]= CentroEstudios.getInstance().getMisGrupos().get(i).getProfesor();
-			row[3]= CentroEstudios.getInstance().getMisGrupos().get(i).getGrupoEstudiantes();
-			
+			row[2]= CentroEstudios.getInstance().getMisUsuarios().get(i).getNombre();
 			model.addRow(row);
 		}
 	}

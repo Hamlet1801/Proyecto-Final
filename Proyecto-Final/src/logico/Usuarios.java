@@ -52,6 +52,8 @@ public abstract class Usuarios  implements Serializable {
 	public void setEdad( String edad) {
 		this.edad = edad;
 	}
+
+	
 	
 	
 

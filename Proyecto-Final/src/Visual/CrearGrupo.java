@@ -153,9 +153,6 @@ public class CrearGrupo extends JDialog {
 		table = new JTable();
 		table.setModel(model);
 		scrollPane.setViewportView(table);
-		
-		JTable table = new JTable();
-		scrollPane.setColumnHeaderView(table);
 	
 	
 	
@@ -179,10 +176,12 @@ public class CrearGrupo extends JDialog {
 						Grupo aux = null;
 						String nombre= textNombre.getText();
 						String profesor = txtProfesor.getText();
-						
+						aux = new Grupo(null, null, null,profesor);
 						CentroEstudios.getInstance().insertarGrupo(aux);
-						JOptionPane.showMessageDialog(null, "Creacion De Grupo Exitodo", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Creacion De Grupo Exitoso", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 						Limpiar();
+						
+						
 					}
 				});
 				okButton.setActionCommand("OK");
@@ -197,17 +196,26 @@ public class CrearGrupo extends JDialog {
 			
 			
 		}
+	}
+		
+	
 		
 	}
-	}
+	
+	
+	
 
-		
+	
+
+
 
 	private void Limpiar() {
 		
 		textNombre.setText("");
 		txtProfesor.setText("");
+		table.setToolTipText("");
 		
 	}
+	
 }
 
