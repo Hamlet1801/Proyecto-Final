@@ -302,7 +302,7 @@ public class Regfigura extends JDialog {
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String contrasenaTemp= txtBusqueda.getText();
-				//Usuarios usuario= null;
+				Usuarios usuario= null;
 				
 				for (Usuarios userr : CentroEstudios.getInstance().getMisUsuarios()) {
 					if(userr.getContraseña().equalsIgnoreCase(contrasenaTemp)) {
@@ -512,6 +512,7 @@ public class Regfigura extends JDialog {
 				buttonPane.add(btnCrear);
 				getRootPane().setDefaultButton(btnCrear);
 			}
+			
 			{
 				btnCancelar = new JButton("Cancelar");
 				btnCancelar.setBackground(new Color(255, 165, 0));

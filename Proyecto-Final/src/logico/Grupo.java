@@ -6,12 +6,12 @@ import java.util.ArrayList;
 public class Grupo {
 	
 	private ArrayList<Estudiantes> grupoEstudiantes;
-	private Profesor profesor;
+	private String profesor;
 	private ArrayList<Prisma> prismasGrupo;
 	private String nombre;
 
 	
-	public Grupo(ArrayList<Estudiantes> grupoEstudiantes, Profesor profesor, ArrayList<Prisma> prismasGrupo, String nombre) {
+	public Grupo(ArrayList<Estudiantes> grupoEstudiantes, String profesor, ArrayList<Prisma> prismasGrupo, String nombre) {
 		super();
 		this.grupoEstudiantes = grupoEstudiantes;
 		this.profesor = profesor;
@@ -33,13 +33,14 @@ public class Grupo {
 		this.grupoEstudiantes = grupoEstudiantes;
 	}
 
-	public Profesor getProfesor() {
+	public String getProfesor() {
 		return profesor;
 	}
 
-	public void setProfesor(Profesor profesor) {
+	public void setProfesor(String profesor) {
 		this.profesor = profesor;
 	}
+	
 
 	public ArrayList<Prisma> getPrismasGrupo() {
 		return prismasGrupo;

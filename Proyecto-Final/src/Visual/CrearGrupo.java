@@ -176,7 +176,7 @@ public class CrearGrupo extends JDialog {
 						Grupo aux = null;
 						String nombre= textNombre.getText();
 						String profesor = txtProfesor.getText();
-						aux = new Grupo(null, null, null,profesor);
+						aux = new Grupo(null, nombre, null,profesor);
 						CentroEstudios.getInstance().insertarGrupo(aux);
 						JOptionPane.showMessageDialog(null, "Creacion De Grupo Exitoso", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 						Limpiar();
@@ -184,6 +184,7 @@ public class CrearGrupo extends JDialog {
 						
 					}
 				});
+				
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
