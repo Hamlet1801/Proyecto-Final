@@ -3,6 +3,7 @@ package Visual;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
+import javax.media.j3d.Canvas3D;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -22,16 +23,22 @@ import logico.Usuarios;
 import javax.swing.JRadioButton;
 import javax.swing.UIManager;
 import java.awt.Color;
+import java.awt.Dialog;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
+
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.SpinnerNumberModel;
 import java.awt.Toolkit;
 import java.awt.Font;
+import java.awt.Frame;
 
 public class Regfigura extends JDialog {
 
@@ -481,6 +488,8 @@ public class Regfigura extends JDialog {
 							float verticey= Float.valueOf(spnverticeyRectangulo.getValue().toString());
 							float altura= Float.valueOf(spnalturaRectangulo.getValue().toString());	
 							prisma= new Rectangulo(verticex, verticey, altura);
+							
+							
 						}
 						
 						if(rbtnCono.isSelected()) {
@@ -505,6 +514,7 @@ public class Regfigura extends JDialog {
 						CentroEstudios.getInstance().insertarPrisma(prisma);
 						//CentroEstudios.getInstance().insertarPrismaUsuario(txtMatbusqueda.getText(), prisma);
 						JOptionPane.showMessageDialog(null, "Registro Exitoso", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+					
 						Limpiar();
 					}
 				});
