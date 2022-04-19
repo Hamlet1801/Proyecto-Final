@@ -52,6 +52,7 @@ public class CrearGrupo extends JDialog {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	/**
@@ -115,24 +116,34 @@ public class CrearGrupo extends JDialog {
 		JPanel panelLista = new JPanel();
 		panelLista.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panelLista.setBackground(new Color(25, 25, 112));
-		panelLista.setBounds(33, 264, 271, 159);
+		panelLista.setBounds(33, 264, 227, 159);
 		panel.add(panelLista);
 		panelLista.setLayout(null);
 		
 		JList list = new JList();
-		list.setBounds(10, 146, 251, -134);
+		list.setBounds(10, 146, 205, -134);
 		panelLista.add(list);
 		
 		JPanel panelListaF = new JPanel();
 		panelListaF.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panelListaF.setBackground(new Color(25, 25, 112));
-		panelListaF.setBounds(351, 264, 271, 159);
+		panelListaF.setBounds(394, 264, 241, 159);
 		panel.add(panelListaF);
 		panelListaF.setLayout(null);
 		
 		JList list_1 = new JList();
-		list_1.setBounds(10, 144, 251, -137);
+		list_1.setBounds(10, 144, 221, -137);
 		panelListaF.add(list_1);
+		
+		JButton btnNewButton = new JButton(">>>");
+		btnNewButton.setFont(new Font("Verdana", Font.BOLD, 15));
+		btnNewButton.setBounds(283, 310, 89, 23);
+		panel.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("<<<");
+		btnNewButton_1.setFont(new Font("Verdana", Font.BOLD, 15));
+		btnNewButton_1.setBounds(283, 357, 89, 23);
+		panel.add(btnNewButton_1);
 		
 		
 			
@@ -171,8 +182,5 @@ public class CrearGrupo extends JDialog {
 			
 		}
 	}
-		
-		
-			
 	}
 
