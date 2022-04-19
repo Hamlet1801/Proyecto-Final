@@ -296,6 +296,8 @@ public class Regfigura extends JDialog {
 						spnVerticex.setEnabled(false);
 						spnVerticey.setEnabled(false);
 						JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+						txtBusqueda.setText("");
+						txtBusqueda.requestFocus();
 					}
 				}
 			}
