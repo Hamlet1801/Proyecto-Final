@@ -22,13 +22,13 @@ public class server extends Thread  {
 			Socket socket = null;
 
 			try {
-				serverSocket = new ServerSocket(8906);
+				serverSocket = new ServerSocket(8908);
 			} catch (IOException ioe) {
 				System.out.println("Server: Conexion rechazada Error: " + ioe);
 				System.exit(1);
 			}
 
-			System.out.println("Server: funcionando en puerto 8906...");
+			System.out.println("Server: funcionando en puerto 8908...");
 
 			try {
 				socket = serverSocket.accept();

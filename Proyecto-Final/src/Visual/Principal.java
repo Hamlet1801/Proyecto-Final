@@ -34,11 +34,21 @@ public class Principal extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-
-
-	/**
-	 * Create the frame.
-	 */
+	/**public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+		public void run() {
+		try {
+		
+		Principal frame = new Principal();
+		frame.setVisible(true);
+		} catch (Exception e) {
+		e.printStackTrace();
+		}
+		}
+		});
+		}
+	**/
+	 
 	public Principal() {
 		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/imagenes/icono.png")));

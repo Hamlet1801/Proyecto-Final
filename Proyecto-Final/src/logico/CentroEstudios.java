@@ -36,6 +36,8 @@ public class CentroEstudios implements Serializable {
 	public static CentroEstudios getInstance() {
 		if(centroestudios== null) {
 			centroestudios= new CentroEstudios();
+			User use = new User ("1","local","1","Administrador","admin");
+			CentroEstudios.getInstance().insertarUser(use);
 		}
 		return centroestudios;
 	}
