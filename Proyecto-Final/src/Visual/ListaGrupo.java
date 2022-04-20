@@ -64,7 +64,7 @@ public class ListaGrupo extends JDialog {
 		contentPanel.add(scrollPane, BorderLayout.CENTER);
 		{
 			
-			String encabezados[]= { "Nombre", "profesor", "Estudiantes"};
+			String encabezados[]= { "Profesor", "Grupo", "Estudiantes"};
 			model= new DefaultTableModel();
 			model.setColumnIdentifiers(encabezados);
 			table = new JTable();

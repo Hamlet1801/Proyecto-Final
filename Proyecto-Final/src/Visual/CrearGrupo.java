@@ -27,11 +27,14 @@ import javax.swing.table.DefaultTableModel;
 import logico.CentroEstudios;
 import logico.Estudiantes;
 import logico.Grupo;
+import logico.Usuarios;
 
 import javax.swing.UIManager;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class CrearGrupo extends JDialog {
 
@@ -42,6 +45,7 @@ public class CrearGrupo extends JDialog {
 		private Object row[];
 		 
 			private JTable table;
+			private JButton btnCrear;
 
 	/**
 	 * Launch the application.
@@ -121,20 +125,18 @@ public class CrearGrupo extends JDialog {
 		label.setBounds(71, 297, 105, 14);
 		panel.add(label);
 		
-		JButton button = new JButton("Lista De estudiantes");
-		button.addActionListener(new ActionListener() {
+		JButton btnlista = new JButton("Lista De estudiantes");
+		btnlista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ListaEstudianteGrupo LeG = new ListaEstudianteGrupo();
-				LeG.setModal(true);
-				LeG.setVisible(true);
+				cargarTabla();
 				
 			}
 		});
-		button.setForeground(Color.BLACK);
-		button.setFont(new Font("Tahoma", Font.BOLD, 11));
-		button.setBackground(new Color(135, 206, 235));
-		button.setBounds(52, 341, 156, 41);
-		panel.add(button);
+		btnlista.setForeground(Color.BLACK);
+		btnlista.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnlista.setBackground(new Color(135, 206, 235));
+		btnlista.setBounds(52, 341, 156, 41);
+		panel.add(btnlista);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
@@ -144,6 +146,19 @@ public class CrearGrupo extends JDialog {
 		panel.add(panel_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				int row = -1;
+	    		row = table.getSelectedRow();
+	    		if(row>-1){
+	    			btnCrear.setEnabled(true);
+						
+						 Usuarios aux1 = CentroEstudios.getInstance().buscarUserByMat((String)model.getValueAt(row, 0));
+						 
+	    			
+			}
+			}});
 		scrollPane.setBounds(10, 11, 356, 152);
 		panel_1.add(scrollPane);
 		
@@ -169,15 +184,18 @@ public class CrearGrupo extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("Crear");
-				okButton.addActionListener(new ActionListener() {
+				btnCrear = new JButton("Crear");
+				btnCrear.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						
 						Grupo aux = null;
+						String aux1 = "";
 						String nombre= textNombre.getText();
 						String profesor = txtProfesor.getText();
 						aux = new Grupo(null, nombre, null,profesor);
+						CentroEstudios.getInstance().buscarUserByMat(aux1);
 						CentroEstudios.getInstance().insertarGrupo(aux);
+						
 						JOptionPane.showMessageDialog(null, "Creacion De Grupo Exitoso", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 						Limpiar();
 						
@@ -185,9 +203,9 @@ public class CrearGrupo extends JDialog {
 					}
 				});
 				
-				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
+				btnCrear.setActionCommand("OK");
+				buttonPane.add(btnCrear);
+				getRootPane().setDefaultButton(btnCrear);
 			}
 			{
 				JButton cancelButton = new JButton("Salir");
@@ -204,7 +222,18 @@ public class CrearGrupo extends JDialog {
 	}
 	
 	
-	
+	private void cargarTabla() {
+		model.setRowCount(0);
+		row= new Object[model.getColumnCount()];
+		for(int i=0; i< CentroEstudios.getInstance().getMisUsuarios().size(); i++) {
+			if(CentroEstudios.getInstance().getMisUsuarios().get(i) instanceof Estudiantes) {
+				row[0]= CentroEstudios.getInstance().getMisUsuarios().get(i).getMatricula();
+				row[1]= CentroEstudios.getInstance().getMisUsuarios().get(i).getNombre();
+				row[2]= CentroEstudios.getInstance().getMisUsuarios().get(i).getEdad();
+				model.addRow(row);
+			}
+		}
+	}
 
 	
 
