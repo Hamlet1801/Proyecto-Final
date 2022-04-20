@@ -55,7 +55,7 @@ public class Regfigura extends JDialog {
 	private JTextField txtMatbusqueda;
 	private JSpinner spnVerticex;
 	private JSpinner spnVerticey;
-	private JPanel panelTriangulo;
+	private JPanel panelCono;
 	private JLabel lblNewLabel_6;
 	private JSpinner spnverticeXTriangulo;
 	private JLabel lblNewLabel_7;
@@ -67,10 +67,12 @@ public class Regfigura extends JDialog {
 	private JButton btnBuscar;
 	private JButton btnCrear;
 	private JButton btnSalir;
-	private JSpinner spnAlturatriangulo;
-	private JSpinner spnverticexRectangulo;
+	private JSpinner spnAlturaCono;
+	private JSpinner spnverticexCono;
 	private JSpinner spnverticeyRectangulo;
 	private JSpinner spnalturaRectangulo;
+	private JSpinner spnDiameCilin;
+	private JSpinner spnAlturacilin;
 
 	/**
 	 * 
@@ -123,7 +125,7 @@ public class Regfigura extends JDialog {
 							rbtnEsfera.setSelected(false);
 							rbtnCilindro.setSelected(false);
 							PanelCubo.setVisible(true);
-							panelTriangulo.setVisible(false);
+							panelCono.setVisible(false);
 							panelEsfera.setVisible(false);
 							
 						}
@@ -146,7 +148,7 @@ public class Regfigura extends JDialog {
 						rbtnEsfera.setSelected(false);
 						rbtnCilindro.setSelected(false);	
 						PanelCubo.setVisible(true);
-						panelTriangulo.setVisible(false);
+						panelCono.setVisible(false);
 						panelEsfera.setVisible(false);
 					}
 				});
@@ -166,13 +168,13 @@ public class Regfigura extends JDialog {
 						rbtnRectangulo.setSelected(false);
 						rbtnEsfera.setSelected(false);
 						rbtnCilindro.setSelected(false);
-						panelTriangulo.setVisible(true);
+						panelCono.setVisible(true);
 						PanelCubo.setVisible(false);
 						panelEsfera.setVisible(false);
 						
 					}
 				});
-				rbtnCono.setBounds(233, 30, 106, 23);
+				rbtnCono.setBounds(233, 30, 96, 23);
 				panelFigura.add(rbtnCono);
 			}
 			{
@@ -189,7 +191,7 @@ public class Regfigura extends JDialog {
 						rbtnCono.setSelected(false);
 						rbtnCilindro.setSelected(false);
 						panelEsfera.setVisible(true);
-						panelTriangulo.setVisible(false);
+						panelCono.setVisible(false);
 						PanelCubo.setVisible(false);
 					}
 				});
@@ -209,7 +211,7 @@ public class Regfigura extends JDialog {
 						rbtnRectangulo.setSelected(false);
 						rbtnCono.setSelected(false);
 						rbtnEsfera.setSelected(false);
-						panelTriangulo.setVisible(true);
+						panelCono.setVisible(true);
 						PanelCubo.setVisible(false);
 						panelEsfera.setVisible(false);
 					}
@@ -363,42 +365,42 @@ public class Regfigura extends JDialog {
 		btnSalir.setBounds(340, 114, 89, 23);
 		panelUsuario.add(btnSalir);
 		
-		panelTriangulo = new JPanel();
-		panelTriangulo.setBackground(Color.BLACK);
-		panelTriangulo.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panelTriangulo.setBounds(10, 273, 557, 99);
-		contentPanel.add(panelTriangulo);
-		panelTriangulo.setLayout(null);
+		panelCono = new JPanel();
+		panelCono.setBackground(Color.BLACK);
+		panelCono.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelCono.setBounds(10, 273, 557, 99);
+		contentPanel.add(panelCono);
+		panelCono.setLayout(null);
 		
 		lblNewLabel_6 = new JLabel("VerticeX:");
 		lblNewLabel_6.setForeground(Color.WHITE);
 		lblNewLabel_6.setSize(58, 14);
 		lblNewLabel_6.setLocation(20, 11);
-		panelTriangulo.add(lblNewLabel_6);
+		panelCono.add(lblNewLabel_6);
 		
 		spnverticeXTriangulo = new JSpinner();
 		spnverticeXTriangulo.setModel(new SpinnerNumberModel(new Float(0), new Float(0), null, new Float(1)));
 		spnverticeXTriangulo.setBounds(20, 36, 100, 23);
-		panelTriangulo.add(spnverticeXTriangulo);
+		panelCono.add(spnverticeXTriangulo);
 		
 		lblNewLabel_7 = new JLabel("VerticeY");
 		lblNewLabel_7.setForeground(new Color(255, 255, 255));
 		lblNewLabel_7.setBounds(200, 11, 58, 14);
-		panelTriangulo.add(lblNewLabel_7);
+		panelCono.add(lblNewLabel_7);
 		
 		spnverticeYTriangulo = new JSpinner();
 		spnverticeYTriangulo.setModel(new SpinnerNumberModel(new Float(0), new Float(0), null, new Float(1)));
 		spnverticeYTriangulo.setBounds(200, 36, 100, 23);
-		panelTriangulo.add(spnverticeYTriangulo);
+		panelCono.add(spnverticeYTriangulo);
 		
 		JLabel lblNewLabel_9 = new JLabel("Altura:");
 		lblNewLabel_9.setForeground(Color.WHITE);
 		lblNewLabel_9.setBounds(390, 11, 73, 14);
-		panelTriangulo.add(lblNewLabel_9);
+		panelCono.add(lblNewLabel_9);
 		
-		spnAlturatriangulo = new JSpinner();
-		spnAlturatriangulo.setBounds(390, 36, 100, 23);
-		panelTriangulo.add(spnAlturatriangulo);
+		spnAlturaCono = new JSpinner();
+		spnAlturaCono.setBounds(390, 36, 100, 23);
+		panelCono.add(spnAlturaCono);
 		
 		panelEsfera = new JPanel();
 		panelEsfera.setBackground(new Color(0, 0, 0));
@@ -440,9 +442,9 @@ public class Regfigura extends JDialog {
 		lblNewLabel_12.setBounds(390, 11, 80, 14);
 		panelRectangulo.add(lblNewLabel_12);
 		
-		spnverticexRectangulo = new JSpinner();
-		spnverticexRectangulo.setBounds(20, 36, 100, 23);
-		panelRectangulo.add(spnverticexRectangulo);
+		spnverticexCono = new JSpinner();
+		spnverticexCono.setBounds(20, 36, 100, 23);
+		panelRectangulo.add(spnverticexCono);
 		
 		spnverticeyRectangulo = new JSpinner();
 		spnverticeyRectangulo.setBounds(200, 36, 100, 23);
@@ -451,6 +453,31 @@ public class Regfigura extends JDialog {
 		spnalturaRectangulo = new JSpinner();
 		spnalturaRectangulo.setBounds(390, 36, 100, 23);
 		panelRectangulo.add(spnalturaRectangulo);
+		
+		JPanel panelCilindro = new JPanel();
+		panelCilindro.setLayout(null);
+		panelCilindro.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelCilindro.setBackground(Color.BLACK);
+		panelCilindro.setBounds(0, 0, 557, 99);
+		panelRectangulo.add(panelCilindro);
+		
+		JLabel label = new JLabel("Diametro:");
+		label.setForeground(Color.WHITE);
+		label.setBounds(20, 11, 73, 14);
+		panelCilindro.add(label);
+		
+		spnDiameCilin = new JSpinner();
+		spnDiameCilin.setBounds(20, 36, 100, 23);
+		panelCilindro.add(spnDiameCilin);
+		
+		JLabel label_1 = new JLabel("Altura:");
+		label_1.setForeground(Color.WHITE);
+		label_1.setBounds(200, 11, 46, 14);
+		panelCilindro.add(label_1);
+		
+		spnAlturacilin = new JSpinner();
+		spnAlturacilin.setBounds(200, 36, 100, 23);
+		panelCilindro.add(spnAlturacilin);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setBackground(new Color(0, 0, 0));
@@ -484,39 +511,63 @@ public class Regfigura extends JDialog {
 						
 						
 						if(rbtnRectangulo.isSelected()) {
-							float verticex= Float.valueOf(spnverticexRectangulo.getValue().toString());
+							float verticex= Float.valueOf(spnverticexCono.getValue().toString());
 							float verticey= Float.valueOf(spnverticeyRectangulo.getValue().toString());
 							float altura= Float.valueOf(spnalturaRectangulo.getValue().toString());	
-							prisma= new Rectangulo(verticex, verticey, altura);
+							if(altura== verticex) {
+								prisma= new Rectangulo (altura,verticex, verticey);
+								CentroEstudios.getInstance().setTamCubo(altura);
+								BoxRectangulo cubox = new BoxRectangulo();
+								cubox.setModal(true);
+								cubox.setVisible(true);
+							}
 							
 							
 						}
 						
 						if(rbtnCono.isSelected()) {
 							float verticex= Float.valueOf(spnverticeXTriangulo.getValue().toString());
-							float verticey= Float.valueOf(spnverticeYTriangulo.getValue().toString());
-							float altura1 =  Float.valueOf(spnAlturatriangulo.getValue().toString());
-							prisma= new Triangulo(verticex,verticey,altura1);
+							float altura1 =  Float.valueOf(spnAlturaCono.getValue().toString());
+							if(altura1== verticex) {
+								prisma= new Triangulo(altura1,verticex);
+								CentroEstudios.getInstance().setTamCubo(altura1);
+								Conot cubox = new Conot();
+								cubox.setModal(true);
+								cubox.setVisible(true);
+							}
+							
 						}
 						
 						if(rbtnCilindro.isSelected()) {
-							float altura= Float.valueOf(spnverticeXTriangulo.getValue().toString());
-							float base= Float.valueOf(spnverticeYTriangulo.getValue().toString());
-							prisma= new Cilindro(altura, base);
+							float altura= Float.valueOf(spnAlturacilin.getValue().toString());
+							float base= Float.valueOf(spnDiametro.getValue().toString());
+							if(altura==base) {
+								prisma= new Cilindro(altura, base);
+								CentroEstudios.getInstance().setTamCubo(altura);
+								Cilin cubox = new Cilin();
+								cubox.setModal(true);
+								cubox.setVisible(true);
+							}
 						}
 						
 						if(rbtnEsfera.isSelected()) {
 							float diametro= Float.valueOf(spnDiametro.getValue().toString());
 							prisma= new Esfera(diametro);
+							CentroEstudios.getInstance().setTamCubo(diametro);
+							Circulo cubox = new Circulo();
+							cubox.setModal(true);
+							cubox.setVisible(true);
 						}
 						
 						
 						CentroEstudios.getInstance().insertarPrisma(prisma);
-						//CentroEstudios.getInstance().insertarPrismaUsuario(txtMatbusqueda.getText(), prisma);
+						CentroEstudios.getInstance().insertarPrismaUsuario(txtMatbusqueda.getText(), prisma);
 						JOptionPane.showMessageDialog(null, "Registro Exitoso", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 					
 						Limpiar();
 					}
+
+					
 				});
 				btnCrear.setActionCommand("OK");
 				buttonPane.add(btnCrear);
@@ -545,6 +596,12 @@ public class Regfigura extends JDialog {
 		spnverticeXTriangulo.setValue(new Float(0.0));
 		spnverticeYTriangulo.setValue(new Float(0.0));
 		spnDiametro.setValue(new Float(0.0));
+		spnAlturaCono.setValue(new Float(0.0));
+		spnverticexCono.setValue(new Float(0.0));
+		spnverticeyRectangulo.setValue(new Float(0.0));
+		spnalturaRectangulo.setValue(new Float(0.0));
+		spnAlturacilin.setValue(new Float(0.0));
+		spnDiameCilin.setValue(new Float(0.0));
 		
 	}
 }

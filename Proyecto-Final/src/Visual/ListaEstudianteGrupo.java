@@ -33,6 +33,7 @@ public class ListaEstudianteGrupo extends JDialog {
 	private Object row[];
 	private int mode ;
 	protected Usuarios aux;
+	protected String select;
 
 	/**
 	 * 
@@ -70,6 +71,7 @@ public class ListaEstudianteGrupo extends JDialog {
 				model= new DefaultTableModel();
 				model.setColumnIdentifiers(encabezados);
 				table = new JTable();
+			
 				table.setModel(model);
 				scrollPane.setViewportView(table);
 			}
@@ -92,11 +94,11 @@ public class ListaEstudianteGrupo extends JDialog {
 					okButton.addMouseListener(new MouseAdapter() {
 						@Override
 						public void mouseClicked(MouseEvent arg0) {
-							int row = -1;
+							int row = 0;
 				    		row = table.getSelectedRow();
-				    		if(row>-1){
-				    			okButton.setEnabled(true);
-									
+				    		if(row>0){
+				    			
+									okButton.setEnabled(true);
 									 aux = CentroEstudios.getInstance().buscarUserByMat((String)model.getValueAt(row, 0));
 									
 								}

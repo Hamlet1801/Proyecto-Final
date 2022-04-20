@@ -83,7 +83,7 @@ public class CentroEstudios {
 		
 		if(usuario instanceof Profesor) {
 			((Profesor) usuario).getPrismasProfesor().add(prisma);
-			//((Profesor) usuario).setCantFigurasCreadas(+1);
+			((Profesor) usuario).setCantFigurasCreadas(+1);
 		}
 	}
 

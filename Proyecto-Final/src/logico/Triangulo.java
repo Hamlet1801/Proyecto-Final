@@ -3,17 +3,18 @@ package logico;
 public class Triangulo extends Prisma {
 	
 	private float verticeBX;
-	private float verticeBY;
+	
 	
 
-	public Triangulo(float altura, float verticeBX, float verticeBY) {
+	public Triangulo(float altura, float verticeBX) {
 		super(altura);
 		this.verticeBX = verticeBX;
-		this.verticeBY = verticeBY;
+		
 		
 	}
 	
 
+	
 	public float getVerticeBX() {
 		return verticeBX;
 	}
@@ -22,18 +23,35 @@ public class Triangulo extends Prisma {
 		this.verticeBX = verticeBX;
 	}
 
-	public float getVerticeBY() {
-		return verticeBY;
+
+
+	@Override
+	public float Volumen() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
-	public void setVerticeBY(float verticeBY) {
-		this.verticeBY = verticeBY;
+
+
+	@Override
+	public float areaLaterales() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
+
+
+
+	@Override
+	public float areaTotales() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 
 
 	
-
+/**
 	@Override
 	public float Volumen() {
 		float areaBase = (verticeBX * verticeBY ) / 2;
@@ -42,19 +60,19 @@ public class Triangulo extends Prisma {
 	}
 
 	@Override
-	public float areaLaterales() {
-		float areaLateral = verticeBY * verticeBX * Altura;
+	//public float areaLaterales() {
+		//float areaLateral = verticeBY * verticeBX * Altura;
 		
-		return areaLateral;
-	}
+		//return areaLateral;
+	//}
 
 	@Override
-	public float areaTotales() {
+	//public float areaTotales() {
 		float areaBase = (verticeBX * verticeBY ) / 2;
 		float areaTotal =  areaLaterales() + (2*areaBase);
 		return areaTotal;
 		
-
-	}
+**/
+	
 
 }

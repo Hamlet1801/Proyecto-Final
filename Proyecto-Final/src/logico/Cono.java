@@ -34,5 +34,15 @@ public class Cono extends Prisma {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	public void setModal(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
