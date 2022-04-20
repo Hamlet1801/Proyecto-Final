@@ -44,5 +44,6 @@ public class Cono extends Prisma {
 		// TODO Auto-generated method stub
 		
 	}
+	private static final long serialVersionUID = -6400059259252304998L;
 	
 }

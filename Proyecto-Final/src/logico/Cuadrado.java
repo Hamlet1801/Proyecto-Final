@@ -47,5 +47,6 @@ public class Cuadrado extends Prisma {
 		return total;
 
 	}
+	private static final long serialVersionUID = 6184343429074930682L;
 
 }

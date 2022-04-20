@@ -51,8 +51,10 @@ public class Login extends JFrame {
 				FileOutputStream CentroDeEstudio2;
 				ObjectInputStream CentroDeEstudioRead;
 				ObjectOutputStream CentroDeEstudioWrite;
+				
 				try {
-					CentroDeEstudio = new FileInputStream ("CentroDeEstudio.dat");
+					CentroEstudios.getInstance().cargarCentro();
+					CentroDeEstudio = new FileInputStream ("CentroEstudios.dat");
 					CentroDeEstudioRead = new ObjectInputStream(CentroDeEstudio);
 					CentroEstudios temp = (CentroEstudios)CentroDeEstudioRead.readObject();
 					CentroEstudios.setCentroestudios(temp);
@@ -62,7 +64,7 @@ public class Login extends JFrame {
 				} catch (FileNotFoundException e) {
 					try {
 						
-						CentroDeEstudio2 = new  FileOutputStream("CentroDeEstudio.dat");
+						CentroDeEstudio2 = new  FileOutputStream("CentroEstudios.dat");
 						CentroDeEstudioWrite = new ObjectOutputStream(CentroDeEstudio2);
 					     User aux = new User("Administrador", "Admin", "Admin", "edad", "TIPO");
 						CentroEstudios.getInstance().RegUsuario(aux);

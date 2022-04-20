@@ -1,15 +1,28 @@
 package logico;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CentroEstudios {
+public class CentroEstudios implements Serializable {
 	
+	private static final long serialVersionUID = 4175295123552801657L;
 	private ArrayList<Prisma> misPrismas;
 	private ArrayList<Usuarios> misUsuarios;
 	private ArrayList<Grupo> misGrupos;
 	public static CentroEstudios centroestudios= null;
 	private float tamCubo;
 	private static Usuarios loginUsuarios;
+
+
+	public static CentroEstudios instanciaGlobal = null;
+	private int generadorCodigoCampo;
 	
 	public CentroEstudios() {
 		super();
@@ -105,6 +118,14 @@ public class CentroEstudios {
 	
 	
 
+	public static CentroEstudios getInstanciaGlobal() {
+		return instanciaGlobal;
+	}
+
+	public static void setInstanciaGlobal(CentroEstudios instanciaGlobal) {
+		CentroEstudios.instanciaGlobal = instanciaGlobal;
+	}
+
 	public boolean confirmLoging(String text, String text2) {
 		boolean Login = false;
 		for(Usuarios user : misUsuarios) {
@@ -134,7 +155,39 @@ public class CentroEstudios {
 
 			
 		}
-
 		
+
+			public void cargarCentro()  {
+				FileInputStream file;
+				ObjectInputStream oos;
+				try {
+					file = new FileInputStream("CentroEstudios.dat");
+					oos = new ObjectInputStream(file);
+					CentroEstudios.setCentroestudios((CentroEstudios)oos.readObject());
+					oos.close();
+				} catch(IOException | ClassNotFoundException e) 
+				{
+					CentroEstudios.getInstance().guardarCentro();
+				}
+			}
+			
+			public void guardarCentro() {
+				FileOutputStream file;
+				try {
+					file = new FileOutputStream("CentroEstudios.dat");
+					ObjectOutputStream oos = new ObjectOutputStream(file);
+					oos.writeObject(CentroEstudios.getInstance());
+					oos.close();
+				} catch(IOException e)
+				{
+					e.printStackTrace();
+
+
+	
 	}
+			}
+}
+
+
+
 

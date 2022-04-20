@@ -1,8 +1,11 @@
 package logico;
 
-public abstract class Prisma {
+import java.io.Serializable;
+
+public abstract class Prisma implements Serializable  {
 
 	protected float Altura;
+	private static final long serialVersionUID = 1093142714433252182L;
 
 	
 	

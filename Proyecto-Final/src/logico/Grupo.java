@@ -1,9 +1,12 @@
 package logico;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Grupo {
+public class Grupo implements Serializable {
+	
+	private static final long serialVersionUID = -7474695256527999402L;
 	
 	private ArrayList<Estudiantes> grupoEstudiantes;
 	private String profesor;

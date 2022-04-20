@@ -73,6 +73,6 @@ public class Triangulo extends Prisma {
 		return areaTotal;
 		
 **/
-	
+	private static final long serialVersionUID = 5325596378792549454L;
 
 }

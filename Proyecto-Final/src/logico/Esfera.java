@@ -24,5 +24,5 @@ public class Esfera extends Prisma {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	private static final long serialVersionUID = 2433241166673451783L;
 }

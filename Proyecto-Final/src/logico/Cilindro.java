@@ -3,6 +3,7 @@ package logico;
 public class Cilindro extends Prisma {
 
 	private float Base;
+	private static final long serialVersionUID = -6400059259252304998L;
 
 	public Cilindro(float altura, float base) {
 		super(altura);

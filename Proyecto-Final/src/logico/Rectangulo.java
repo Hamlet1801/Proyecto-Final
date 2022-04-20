@@ -53,5 +53,6 @@ public class Rectangulo extends Prisma {
 		
 
 	}
+	private static final long serialVersionUID = 2160964019487119569L;
 
 }
